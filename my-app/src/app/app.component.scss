@@ -1,0 +1,21 @@
+$mainColor: black; 
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1210px;
+    margin: 0 auto;
+    &__burger {
+        height: 12px;
+    }
+    &__button {
+        color: #1071FF;
+    }
+}
