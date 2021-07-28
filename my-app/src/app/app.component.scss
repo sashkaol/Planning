@@ -1,21 +1,46 @@
 $mainColor: black; 
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+$mainFont: 'Montserrat', sans-serif;
 
 * {
     margin: 0;
     padding: 0;
+}
+.main {
+    max-width: 1210px;
+    margin: 0 auto;
 }
 .header {
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1210px;
-    margin: 0 auto;
     &__burger {
         height: 12px;
     }
     &__button {
         color: #1071FF;
+        font-family: $mainFont;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    :hover {
+        cursor: pointer;
+    }
+}
+.navbar {
+    margin-top: 16px;
+    &__menu {
+        display: flex;
+        list-style: none;
+        &__item {
+            font-family: $mainFont;
+            margin-right: 10px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: rgba(0, 0, 0, 0.54);
+        }
     }
 }
