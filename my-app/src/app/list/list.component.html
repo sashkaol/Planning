@@ -1,5 +1,25 @@
-<div>
-    <div class="data">
-        {{ data[0]['plan'] }}
+<div class="list">
+    <ul class="title">
+        <li>Дата начала</li>
+        <li>Название</li>
+        <li>Участников</li>
+        <li>Тренер</li>
+        <li>Прогресс</li>
+    </ul>
+    <div class="list__record" *ngFor="let item of arr">
+        <li>{{ item[0] }}</li>
+        <li>{{ item[1] }}</li>
+        <li>{{ item[2] }}</li>
+        <li>{{ item[3] }}</li>
+        <li>{{ item[4] }}</li>
     </div>
+    <br />
+    <!-- <div class="list__record" *ngFor="let num of data">
+        Оно не работает так, как надо, но для кучи записей сойдет
+        <div *ngFor="let item of data[0] | keyvalue">
+            <div class="list__record__item">
+                {{ item.value }}
+            </div>
+        </div>
+    </div> -->
 </div>

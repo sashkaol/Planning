@@ -1,6 +1,5 @@
 $mainColor: black; 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-$mainFont: 'Montserrat', sans-serif;
+@import '../styles.scss';
 
 * {
     margin: 0;
@@ -30,7 +29,9 @@ $mainFont: 'Montserrat', sans-serif;
     }
 }
 .navbar {
-    margin-top: 16px;
+    max-width: 1162px;
+    margin: 16px auto;
+    width: 100%;
     &__menu {
         display: flex;
         list-style: none;
@@ -43,4 +44,9 @@ $mainFont: 'Montserrat', sans-serif;
             color: rgba(0, 0, 0, 0.54);
         }
     }
+}
+.container {
+    max-width: 1162px;
+    width: 100%;
+    margin: 0 auto;
 }

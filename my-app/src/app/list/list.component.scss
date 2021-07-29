@@ -1,0 +1,35 @@
+@import '../../styles.scss';
+
+.list {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    .title {
+        color: rgba(0, 0, 0, 0.54);
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 8px;
+        list-style: none;
+    }
+    &__record {
+        transition: background 0.3s ease-out;
+        display: flex;
+        justify-content: space-between;
+        height: 44px;
+        align-items: center;
+        padding: 14px 8px;
+        box-sizing: border-box;
+        list-style: none;
+        &__item {
+            margin-right: 24px;
+        }
+    }
+}
+.list__record:hover {
+    background: #f6f6f6;
+    border-radius: 4px;
+    transition: background 0.3s ease-out;
+    cursor: pointer;
+}

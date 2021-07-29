@@ -1,0 +1,13 @@
+@import '../../styles.scss';
+
+.title {
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: $mainFont;
+    .icon {
+        max-width: 27px;
+        width: 100%;
+    }
+}

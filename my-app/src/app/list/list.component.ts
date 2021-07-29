@@ -7,20 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
     title = 'list';
-    private name:string = 'ыыы';
-    data: any[] = [];
+    //data: Object[] = [];
+    arr: any[] = [];
+    //item: Object = {};
 
     ngOnInit() {
         for (let i = 0; i < 10; i++) {
-            this.data.push({
-                date: '12.10.2020',
-                plan: 'Составить план'
-            })
-            document.querySelector('.data')?.insertAdjacentHTML('beforeend', `
-            <p>${this.data[i]['date']}</p>
-            <p>${this.data[i]['plan']}</p>`)
+            let it = [
+                '12.11.2020',
+                'ususus',
+                Math.round(Math.random() * 100),
+                '',
+                String(Math.round(Math.random() * 100)) + '%'
+            ]
+            this.arr.push(it)
         }
-        console.log(this.data);
-        return this.data
+        console.log(this.arr);
+        // for (let i = 0; i < 10; i++) {
+        //     this.item = {
+        //         Adate: '12.10.2020',
+        //         Bplan: 'Составить план',
+        //         Cparticipants: Math.round(Math.random() * (i+1) * 100),
+        //         Dcoach: '',
+        //         Eprogress: String(Math.round(Math.random() * (i+1) * 100)) + '%'
+        //     }
+        //     this.data.push(this.item)
+        //     console.log(this.data[i]);
+        // }
+        // return this.data, this.arr
+        return this.arr
     }
 }
