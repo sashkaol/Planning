@@ -1,25 +1,23 @@
 <div class="list">
     <ul class="title">
-        <li>Дата начала</li>
-        <li>Название</li>
-        <li>Участников</li>
-        <li>Тренер</li>
-        <li>Прогресс</li>
+        <li class="item date">Дата начала</li>
+        <li class="item plan">Название</li>
+        <li class="item participants">Участников</li>
+        <li class="item coach">Тренер</li>
+        <li class="item progress">Прогресс</li>
+        <li class="item points"></li>
     </ul>
-    <div class="list__record" *ngFor="let item of arr">
-        <li>{{ item[0] }}</li>
-        <li>{{ item[1] }}</li>
-        <li>{{ item[2] }}</li>
-        <li>{{ item[3] }}</li>
-        <li>{{ item[4] }}</li>
-    </div>
-    <br />
-    <!-- <div class="list__record" *ngFor="let num of data">
-        Оно не работает так, как надо, но для кучи записей сойдет
-        <div *ngFor="let item of data[0] | keyvalue">
-            <div class="list__record__item">
-                {{ item.value }}
-            </div>
-        </div>
-    </div> -->
+    <ul class="list__record" [class.passive]="item.active == false" *ngFor="let item of data">
+        <li class="item date">{{ item.date }}</li>
+        <li class="item plan">{{ item.plan }}</li>
+        <li class="item participants">{{ item.participants }}</li>
+        <li class="item coach">{{ item.coach }}</li>
+        <li class="item progress">
+            <img class="progress__icon" src="../../assets/progress.svg" alt="progress">
+            {{ item.progress }}
+        </li>
+        <li class="item points">
+            <img class="menu" src="../../assets/menu-points.svg" alt="menu">
+        </li>
+    </ul>
 </div>

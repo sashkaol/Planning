@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+$active: rgba(0, 0, 0, 0.87);
+$passive: rgba(0, 0, 0, 0.54);
+
+.container {
+    max-width: 1162px;
+    width: 100%;
+}
+.tabs {
+    font-family: $mainFont;
+    color: $passive;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .tab {
+        margin-right: 24px;
+        height: 34px;
+        border-bottom: 2px solid #ffffff;
+    }
+    :hover {
+        cursor: pointer;
+        color: $active;
+        border-bottom: 2px solid #1071FF;
+    }
+}
+.active {
+    color: $active;
+    border-bottom: 2px solid #1071FF !important;
+}
+.filters {
+    .fields {
+        margin-top: 56px;
+        margin-right: 30px;
+        display: flex;
+        .field {
+            margin-right: 30px;
+            border: none;
+            outline: none;
+            max-width: 166px;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    }
+}

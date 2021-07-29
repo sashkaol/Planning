@@ -1,4 +1,5 @@
 @import '../../styles.scss';
+$animBackGroung: background 0.3s ease-out;
 
 .list {
     font-family: $mainFont;
@@ -6,30 +7,83 @@
     font-size: 12px;
     line-height: 16px;
     color: rgba(0, 0, 0, 0.87);
+    .menu {
+        height: 11px;
+    }
     .title {
         color: rgba(0, 0, 0, 0.54);
         display: flex;
-        justify-content: space-between;
+        align-items: center;
         padding: 14px 8px;
         list-style: none;
     }
     &__record {
-        transition: background 0.3s ease-out;
+        transition: $animBackGroung;
         display: flex;
-        justify-content: space-between;
         height: 44px;
         align-items: center;
         padding: 14px 8px;
         box-sizing: border-box;
         list-style: none;
-        &__item {
-            margin-right: 24px;
-        }
     }
 }
 .list__record:hover {
     background: #f6f6f6;
     border-radius: 4px;
-    transition: background 0.3s ease-out;
+    transition: $animBackGroung;
     cursor: pointer;
 }
+@mixin col($tab) {
+    width: 100%;
+    @if $tab == date {
+        margin-right: 24px;
+        max-width: 87px;
+    } @else if $tab == plan {
+        margin-right: 30px;
+        max-width: 546px;
+    } @else if $tab == participants {
+        margin-right: 32px;
+        max-width: 104px;
+    } @else if $tab == coach {
+        margin-right: 87px;
+        max-width: 48px;
+    } @else if $tab == progres {
+        margin-right: 73px;
+        max-width: 83px;
+        color: rgba(0, 0, 0, 0.54);
+    } @else if $tab == points {
+        max-width: 32px;
+        height: 32px;
+    } @else if $tab == icon {
+        max-width: 13px;
+        margin-right: 7px
+    }
+}
+.date { @include col(date) }
+.plan { @include col(plan) }
+.participants { @include col(participants) }
+.coach { @include col(coach) }
+.progress { @include col(progres); 
+    display: flex;
+    align-items: center;
+    &__icon {
+        @include col(icon)
+    }
+}
+.points { 
+    @include col(points);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border-radius: 50%;
+    transition: $animBackGroung;
+}
+.points:hover {
+    background-color: #d5d5d5;
+    transition: $animBackGroung;
+}
+.passive {
+    color: rgba(0, 0, 0, 0.38);
+}
+
+

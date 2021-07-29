@@ -1,0 +1,17 @@
+<div class="tabs">
+    <div id="group" class="tab" [class.active]="isActive == 'group'" (click)="select('group')">Групповое</div>
+    <div id="person" class="tab" [class.active]="isActive == 'person'" (click)="select('person')">Индивидуальное</div>
+</div>
+<div class="filters">
+    <div class="fields">
+        <input class="field" type="text" placeholder="Поиск"/>
+        <details class="field"></details>
+        <details class="field"></details>
+        <details class="field"></details>
+    </div>
+    <div class="other">
+        <div>34 сессии</div>
+        <div>Настроить фильтр</div>
+        <div>Сбросить</div>
+    </div>
+</div>
