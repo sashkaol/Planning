@@ -1,6 +1,7 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 $active: rgba(0, 0, 0, 0.87);
 $passive: rgba(0, 0, 0, 0.54);
+$selected: #1071ff;
 
 .container {
     max-width: 1162px;
@@ -24,12 +25,12 @@ $passive: rgba(0, 0, 0, 0.54);
     :hover {
         cursor: pointer;
         color: $active;
-        border-bottom: 2px solid #1071FF;
+        border-bottom: 2px solid #1071ff;
     }
 }
 .active {
     color: $active;
-    border-bottom: 2px solid #1071FF !important;
+    border-bottom: 2px solid $selected !important;
 }
 .filters {
     .fields {
@@ -38,11 +39,49 @@ $passive: rgba(0, 0, 0, 0.54);
         display: flex;
         .field {
             margin-right: 30px;
+            height: 40px;
             border: none;
             outline: none;
             max-width: 166px;
             width: 100%;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            background-color: #ffffff;
+            font-family: $mainFont;
         }
     }
+}
+.search {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+.mat-select {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+.mat-option-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+.mat-primary {
+    color: $selected !important;
+    font-family: $mainFont;
+}
+
+.mat-option.mat-active {
+    color: $selected !important;
+}
+
+.mat-option.mat-selected {
+    color: $selected !important;
+}
+.mat-focused {
+    color: $selected !important;
+    border-color: $selected !important;
+}
+mat-label {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: $passive;
 }

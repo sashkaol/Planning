@@ -4,10 +4,43 @@
 </div>
 <div class="filters">
     <div class="fields">
-        <input class="field" type="text" placeholder="Поиск"/>
-        <details class="field"></details>
-        <details class="field"></details>
-        <details class="field"></details>
+        <div>
+            <img src="../../assets/search.svg" alt="search">
+            <input class="field search" type="text" placeholder="Поиск" />
+        </div>
+        <mat-form-field class="field">
+            <mat-label>Программа</mat-label>
+            <mat-select>
+                <mat-option [value]="'Все'">
+                    Все
+                </mat-option>
+                <mat-option [value]="'Не все'">
+                    Не все
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <mat-label>Период</mat-label>
+            <mat-select>
+                <mat-option [value]="'Июнь 2019'">
+                    Июнь 2019
+                </mat-option>
+                <mat-option [value]="'Не Июнь 2019'">
+                    Не Июнь 2019
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="field">
+            <mat-label>Статус</mat-label>
+            <mat-select>
+                <mat-option [value]="'Все'">
+                    Все
+                </mat-option>
+                <mat-option [value]="'Не все'">
+                    Не все
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
     <div class="other">
         <div>34 сессии</div>
