@@ -8,6 +8,16 @@ $mainColor: black;
 .main {
     max-width: 1210px;
     margin: 0 auto;
+    padding: 10px;
+}
+.opacity {
+    opacity: 0.3;
+}
+.visible {
+    display: block !important;
+}
+.hidden {
+    display: none;
 }
 .header {
     height: 64px;
@@ -29,7 +39,7 @@ $mainColor: black;
     }
 }
 .navbar {
-    max-width: 1162px;
+    max-width: 1146px;
     margin: 16px auto;
     width: 100%;
     &__menu {

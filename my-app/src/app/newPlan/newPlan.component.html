@@ -1,0 +1,15 @@
+<div class="new">
+    Планирование
+    <img src="../../assets/ok.svg" alt="">
+    <img (click)="close(false)" src="../../assets/cross.svg" alt="">
+    <div class="tabs">
+        <div id="basic" class="tab" [class.active]="isActive == 'basic'" (click)="select('basic')">Основное</div>
+        <div id="people" class="tab" [class.active]="isActive == 'people'" (click)="select('people')">Участники</div>
+    </div>
+    <div class="page basic" [class.open]="isActive == 'basic'">
+        Основное
+    </div>
+    <div class="page people" [class.open]="isActive == 'people'">
+        Люди
+    </div>
+</div>

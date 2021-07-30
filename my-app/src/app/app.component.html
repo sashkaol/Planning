@@ -1,21 +1,24 @@
-<div class="main">
-  <div class="header">
-    <div class="header__burger">
-      <img src="../assets/Shape.svg" alt="menu">
+<div>
+  <div class="main" [class.opacity]="openAdd">
+    <div class="header">
+      <div class="header__burger">
+        <img src="../assets/Shape.svg" alt="menu">
+      </div>
+      <div class="header__button" (click)="openAdd = true">
+        ➕ Запланировать
+      </div>
     </div>
-    <div class="header__button">
-      ➕ Запланировать
+    <div class="navbar">
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item">Главная &nbsp;&nbsp;&mdash;</li>
+        <li class="navbar__menu__item">Планирование</li>
+      </ul>
+    </div>
+    <div class="container">
+      <planning class="planning"></planning>
     </div>
   </div>
-  <div class="navbar">
-    <ul class="navbar__menu">
-      <li class="navbar__menu__item">Главная</li>
-      <li class="navbar__menu__item">Планирование</li>
-    </ul>
-  </div>
-  <div class="container">
-    <planning></planning>
-  </div>
+  <new-plan class="hidden" [class.visible]="openAdd" (onClose)="onClose($event)"></new-plan>
 </div>
 
 <router-outlet></router-outlet>

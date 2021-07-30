@@ -6,7 +6,10 @@ $animBackGroung: background 0.3s ease-out;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    margin-top: 55px;
     color: rgba(0, 0, 0, 0.87);
+    max-width: 1162px;
+    width: 100%;
     .menu {
         height: 11px;
     }
@@ -38,15 +41,19 @@ $animBackGroung: background 0.3s ease-out;
     @if $tab == date {
         margin-right: 24px;
         max-width: 87px;
+        min-width: 87px;
     } @else if $tab == plan {
         margin-right: 30px;
         max-width: 546px;
+        min-width: 118px;
     } @else if $tab == participants {
         margin-right: 32px;
         max-width: 104px;
+        min-width: 26px;
     } @else if $tab == coach {
         margin-right: 87px;
         max-width: 48px;
+        min-width: 20px;
     } @else if $tab == progres {
         margin-right: 73px;
         max-width: 83px;

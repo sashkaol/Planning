@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+$active: rgba(0, 0, 0, 0.87);
+$passive: rgba(0, 0, 0, 0.54);
+$selected: #1071ff;
+
+.new {
+    height: 100%;
+    max-width: 866px;
+    width: 100%;
+    position: absolute;
+    padding: 20px 24px;
+    right: 0;
+    top: 20px;
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.08);
+}
+.tabs {
+    font-family: $mainFont;
+    color: $passive;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .tab {
+        margin-right: 24px;
+        height: 34px;
+        border-bottom: 2px solid #ffffff;
+    }
+    :hover {
+        cursor: pointer;
+        color: $active;
+        border-bottom: 2px solid #1071ff;
+    }
+}
+.active {
+    color: $active;
+    border-bottom: 2px solid $selected !important;
+}
+.open {
+    display: block !important;
+}
+.page {
+    display: none;
+}

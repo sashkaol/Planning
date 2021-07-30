@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { Planning } from './planning/planning.component';
 import { ListComponent } from './list/list.component';
 import { FiltersComponent } from './filters/filters.component';
+import { NewPlanComponent } from './newPlan/newPlan.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -16,14 +15,13 @@ import { MatSelectModule } from '@angular/material/select';
     AppComponent,
     Planning,
     ListComponent,
-    FiltersComponent
+    FiltersComponent,
+    NewPlanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

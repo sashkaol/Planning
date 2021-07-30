@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  openAdd = false;
+  onClose(increased: any) {
+    if (!(increased)) {
+      this.openAdd = false
+    }
+  }
 }
