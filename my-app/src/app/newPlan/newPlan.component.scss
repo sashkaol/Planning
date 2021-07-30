@@ -1,19 +1,45 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 $active: rgba(0, 0, 0, 0.87);
 $passive: rgba(0, 0, 0, 0.54);
 $selected: #1071ff;
 
 .new {
     height: 100%;
-    max-width: 866px;
+    max-width: 860px;
     width: 100%;
     position: absolute;
     padding: 20px 24px;
+    box-sizing: border-box;
     right: 0;
     top: 20px;
     z-index: 3;
     background-color: #fff;
     box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.08);
+    font-family: $mainFont;
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        .buttons {
+            display: flex;
+            max-width: 54px;
+            width: 100%;
+            justify-content: space-between;
+            .cross {
+                width: 12px;
+            }
+            .ok {
+                width: 16px;
+            }
+        }
+        .buttons:hover {
+            cursor: pointer;
+        }
+    }
 }
 .tabs {
     font-family: $mainFont;
@@ -25,10 +51,13 @@ $selected: #1071ff;
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: 22px;
     .tab {
         margin-right: 24px;
-        height: 34px;
+        height: 32px;
         border-bottom: 2px solid #ffffff;
+        display: flex;
+        align-items: center;
     }
     :hover {
         cursor: pointer;
@@ -45,4 +74,103 @@ $selected: #1071ff;
 }
 .page {
     display: none;
+}
+.basic,
+.people {
+    margin-top: 32px;
+}
+.settings {
+    margin-top: 52px;
+    &__title {
+        font-family: $mainFont;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: $active;
+    }
+}
+.field {
+    input {
+        outline: none;
+        border: none;
+    }
+    margin-right: 30px;
+    outline: none;
+    height: 40px;
+    border: none;
+    max-width: 818px;
+    width: 100%;
+    font-family: $mainFont;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    font-weight: 500;
+    &__label {
+        font-size: 10px;
+        line-height: 12px;
+        color: $passive;
+        padding-left: 3px;
+    }
+    &__select {
+        border: none;
+        outline: none;
+        background-color: #ffffff;
+        height: 27px;
+        font-family: inherit;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        justify-content: space-between;
+        &__value {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            //max-width: 140px;
+            width: 100%;
+        }
+    }
+    :hover {
+        cursor: pointer;
+    }
+}
+.select {
+    flex-direction: column;
+    position: relative;
+}
+.options {
+    position: absolute;
+    top: 48px;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    width: 818px;
+    padding: 18px 16px;
+    box-sizing: border-box;
+    display: none;
+    .option {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+    :hover {
+        cursor: pointer;
+        color: $selected;
+    }
+    :hover::after {
+        content: url("../../assets/ok.svg");
+    }
+    :not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+.open {
+    display: block;
+}
+.selectedItem {
+    color: $selected;
+}
+.selectedItem::after {
+    content: url("../../assets/ok.svg");
 }

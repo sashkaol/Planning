@@ -1,13 +1,34 @@
 <div class="new">
-    Планирование
-    <img src="../../assets/ok.svg" alt="">
-    <img (click)="close(false)" src="../../assets/cross.svg" alt="">
+    <div class="title">
+        Планирование
+        <div class="buttons">
+            <img class="ok" src="../../assets/ok.svg" alt="">
+            <img class="cross" (click)="close(false)" src="../../assets/cross.svg" alt="">
+        </div>
+    </div>
     <div class="tabs">
         <div id="basic" class="tab" [class.active]="isActive == 'basic'" (click)="select('basic')">Основное</div>
         <div id="people" class="tab" [class.active]="isActive == 'people'" (click)="select('people')">Участники</div>
     </div>
     <div class="page basic" [class.open]="isActive == 'basic'">
-        Основное
+        <div class="field select">
+            <label for="select" class="field__label">Программа</label>
+            <div class="field__select" (click)="open('program')">
+                <input class="field__select__value" readonly placeholder="Выберите" [value]="value"/>
+                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+            </div>
+            <div id="program" class="options" [class.open]="isOpen == 'program'">
+                <div class="option" *ngFor="let item of list" (click)="selectItem(item.plan)">{{ item.plan }}</div>
+            </div>
+        </div>
+        <div class="settings">
+            <h1 class="settings__title">Мероприятие, дата и время проведения</h1>
+            <div class="event">
+                <h3>Мероприятие</h3>
+                <div class="title">Главные правила продаж Тренниг</div>
+                
+            </div>
+        </div>
     </div>
     <div class="page people" [class.open]="isActive == 'people'">
         Люди

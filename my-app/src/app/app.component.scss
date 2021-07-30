@@ -11,7 +11,8 @@ $mainColor: black;
     padding: 10px;
 }
 .opacity {
-    opacity: 0.3;
+    opacity: 0.1;
+    pointer-events: none;
 }
 .visible {
     display: block !important;
