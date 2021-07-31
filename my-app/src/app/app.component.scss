@@ -8,16 +8,18 @@
     max-width: 1210px;
     margin: 0 auto;
     padding: 10px;
+    transition: opacity 0.4s ease-out;
 }
 .opacity {
     opacity: 0.1;
     pointer-events: none;
-}
-.visible {
-    display: block !important;
+    transition: opacity 0.4s ease-out;
 }
 .hidden {
     display: none;
+}
+.hidden.visible {
+    display: block;
 }
 .header {
     height: 64px;
@@ -34,6 +36,14 @@
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
+        border-radius: 24px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+        transition: $animBackGroung;
+    }
+    &__button:hover {
+        background-color: $blueHover;
+        transition: $animBackGroung;
     }
     :hover {
         cursor: pointer;

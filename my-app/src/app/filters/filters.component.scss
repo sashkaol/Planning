@@ -26,6 +26,20 @@
     &__button:hover {
         cursor: pointer;
     }
+    .button {
+        border-radius: 24px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+        transition: $animBackGroung;
+    }
+    .button:hover {
+        background-color: $blueHover;
+        transition: $animBackGroung;
+    }
+    .button.drop:hover {
+        background-color: $hover;
+        transition: $animBackGroung;
+    }
     .settings {
         color: $selected;
         margin-right: 41px;

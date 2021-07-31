@@ -14,15 +14,16 @@
             <div class="field select small">
                 <label class="field__label">Сортировка</label>
                 <div class="field__select" (click)="open('sorted')">
-                    <input class="field__select__value" readonly [value]="sortedValue"
-                        placeholder="Выберите" />
+                    <input class="field__select__value" readonly [value]="sortedValue" placeholder="Выберите" />
                     <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                 </div>
                 <div id="sorted" class="options" [class.open]="isOpen == 'sorted'">
                     <div class="option" [class.selectedItem]="isSelected.sorted == 'По прогрессу обучения'"
-                        (click)="selectItem('По прогрессу обучения', 'sorted'); isSelected.sorted = 'По прогрессу обучения'">По прогрессу обучения</div>
+                        (click)="selectItem('По прогрессу обучения', 'sorted'); isSelected.sorted = 'По прогрессу обучения'">
+                        По прогрессу обучения</div>
                     <div class="option" [class.selectedItem]="isSelected.sorted == 'Не по прогрессу обучения'"
-                        (click)="selectItem('Не по прогрессу обучения', 'sorted'); isSelected.sorted = 'Не по прогрессу обучения'">Не по прогрессу обучения</div>
+                        (click)="selectItem('Не по прогрессу обучения', 'sorted'); isSelected.sorted = 'Не по прогрессу обучения'">
+                        Не по прогрессу обучения</div>
                 </div>
             </div>
         </div>
@@ -79,11 +80,11 @@
         </div>
         <div class="other">
             <div class="other__text">34 сессии</div>
-            <div class="other__button settings">
+            <div class="other__button settings button">
                 <img class="filters" src="../../assets/filters.svg" alt="filters">
                 Настроить фильтр
             </div>
-            <div class="other__button drop"
+            <div class="other__button drop button"
                 (click)="periodValue = ''; programValue = ''; statusValue = ''; isSelected.status = ''; isSelected.period = ''; isSelected.program = ''">
                 &#10005; Сбросить</div>
         </div>

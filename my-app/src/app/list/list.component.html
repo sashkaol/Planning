@@ -16,16 +16,24 @@
             <img class="progress__icon" src="../../assets/progress.svg" alt="progress">
             {{ item.progress }}
         </li>
-        <li class="item points" (click)="show($event)">
+        <li class="item points" mat-button [matMenuTriggerFor]="menu">
             <img class="menu" src="../../assets/menu-points.svg" alt="menu">
+            <div class="context">
+                <mat-menu #menu="matMenu" yPosition="above" xPosition="before">
+                    <button mat-menu-item>
+                        <div class="context__item">
+                            <img src="../../assets/pen.svg" alt="pen">
+                            Редактировать
+                        </div>
+                    </button>
+                    <button mat-menu-item>
+                        <div class="context__item">
+                            <img src="../../assets/trash.svg" alt="thash">
+                            Удалить слот
+                        </div>
+                    </button>
+                </mat-menu>
+            </div>
         </li>
     </ul>
-    <div class="context" [class.open]='shown'>
-        <div class="context__item">
-            <img src="../../assets/pen.svg" alt="pen">
-            Редактировать</div>
-        <div class="context__item">
-            <img src="../../assets/trash.svg" alt="thash">
-            Удалить слот</div>
-    </div>
 </div>

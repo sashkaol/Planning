@@ -2,8 +2,12 @@
     <div class="title">
         Планирование
         <div class="buttons">
-            <img class="ok" src="../../assets/ok.svg" alt="">
-            <img class="cross" (click)="close(false)" src="../../assets/cross.svg" alt="">
+            <div class="button">
+                <img class="ok" src="../../assets/ok.svg" alt="">
+            </div>
+            <div class="button" (click)="close(false)">
+                <img class="cross" src="../../assets/cross.svg" alt="">
+            </div>
         </div>
     </div>
     <div class="tabs window">
@@ -36,14 +40,14 @@
                         <label class="field__label">Дата</label>
                         <div class="field__select">
                             <input class="field__select__value" type="date" />
-                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            
                         </div>
                     </div>
                     <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
-                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            
                         </div>
                     </div>
                     <div class="field mini select">
@@ -61,9 +65,27 @@
                     <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
                 </div>
                 <div class="fields">
-                    <input type="date" placeholder="Дата" />
-                    <input type="time" placeholder="Время" />
-                    <input type="text" placeholder="Тренер" />
+                    <div class="field mini select">
+                        <label class="field__label">Дата</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="date" />
+                            
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Время</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="time" />
+                            
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Тренер</label>
+                        <div class="field__select">
+                            <input class="field__select__value" />
+                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="event">
@@ -71,10 +93,26 @@
                     <h3 class="title">Мероприятие</h3>
                     <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
                 </div>
-                <div class="fields">
-                    <input type="date" placeholder="Дата" />
-                    <input type="time" placeholder="Время" />
-                    <input type="text" placeholder="Тренер" />
+                <div class="fields event">
+                    <div class="field mini select">
+                        <label class="field__label">Дата</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="date" />
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Время</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="time" />
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Тренер</label>
+                        <div class="field__select">
+                            <input class="field__select__value" />
+                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <h3 class="settings__title">Условия записи по коду</h3>
