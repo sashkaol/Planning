@@ -8,7 +8,7 @@ $animBackGroung: background 0.3s ease-out;
     line-height: 16px;
     margin-top: 55px;
     color: rgba(0, 0, 0, 0.87);
-    max-width: 1162px;
+    // max-width: 1162px;
     width: 100%;
     position: relative;
     .menu {
@@ -50,7 +50,7 @@ $animBackGroung: background 0.3s ease-out;
     } @else if $tab == participants {
         margin-right: 32px;
         max-width: 104px;
-        min-width: 26px;
+        min-width: 10px;
     } @else if $tab == coach {
         margin-right: 87px;
         max-width: 48px;
@@ -135,4 +135,25 @@ $animBackGroung: background 0.3s ease-out;
 }
 .context.open {
     display: block;
+}
+@media screen and (max-width: 600px) {
+    .list {
+        margin-top: 45px;
+        .coach {display: none;}
+        .date {margin-right: 16px;}
+        .plan {margin-right: 16px;}
+        .participants.head {
+            color: #fff;
+        }
+        .participants.head::before {
+            color: $passive;
+            content: 'Уч.';
+        }
+        .points {
+            display: none;
+        }
+        .title {
+            font-size: 10px;
+        }
+    }
 }

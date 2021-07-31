@@ -10,9 +10,11 @@ export class FiltersComponent {
     isSelected = {
         program: '',
         period: '',
-        status: ''
+        status: '',
+        sorted: ''
     }
     isOpen = '';
+    sortedValue = '';
     programValue = '';
     periodValue = '';
     statusValue = '';
@@ -39,6 +41,9 @@ export class FiltersComponent {
                 break;
                 case 'period':
                 this.periodValue = value
+                break;
+                case 'sorted':
+                this.sortedValue = value
                 break;
             default:
                 break;
