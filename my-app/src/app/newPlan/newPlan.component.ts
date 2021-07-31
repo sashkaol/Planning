@@ -12,6 +12,10 @@ export class NewPlanComponent {
     isSelect = ''
     isOpen = '';
     value = '';
+    coach = [
+        'Кто-то',
+        'Еще кто-то'
+    ]
 
     public select(id: string) {
         this.isActive = id
@@ -32,5 +36,6 @@ export class NewPlanComponent {
 
     public selectItem(value: string) {
         this.value = value
+        this.isSelect = value
     }
 }

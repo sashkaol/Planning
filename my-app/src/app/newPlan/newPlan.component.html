@@ -6,27 +6,95 @@
             <img class="cross" (click)="close(false)" src="../../assets/cross.svg" alt="">
         </div>
     </div>
-    <div class="tabs">
+    <div class="tabs window">
         <div id="basic" class="tab" [class.active]="isActive == 'basic'" (click)="select('basic')">Основное</div>
         <div id="people" class="tab" [class.active]="isActive == 'people'" (click)="select('people')">Участники</div>
     </div>
     <div class="page basic" [class.open]="isActive == 'basic'">
-        <div class="field select">
-            <label for="select" class="field__label">Программа</label>
-            <div class="field__select" (click)="open('program')">
-                <input class="field__select__value" readonly placeholder="Выберите" [value]="value"/>
-                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
-            </div>
-            <div id="program" class="options" [class.open]="isOpen == 'program'">
-                <div class="option" *ngFor="let item of list" (click)="selectItem(item.plan)">{{ item.plan }}</div>
+        <div class="fields">
+            <div class="field select big">
+                <label class="field__label">Программа</label>
+                <div class="field__select" (click)="open('program')">
+                    <input class="field__select__value" readonly placeholder="Выберите" [value]="value" />
+                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                </div>
+                <div id="program" class="options important" [class.open]="isOpen == 'program'">
+                    <div [class.selectedItem]="isSelect == item.plan" class="option" *ngFor="let item of list"
+                        (click)="selectItem(item.plan)">{{ item.plan }}</div>
+                </div>
             </div>
         </div>
         <div class="settings">
             <h1 class="settings__title">Мероприятие, дата и время проведения</h1>
             <div class="event">
-                <h3>Мероприятие</h3>
-                <div class="title">Главные правила продаж Тренниг</div>
-                
+                <div class="head">
+                    <h3 class="title">Мероприятие</h3>
+                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
+                </div>
+                <div class="fields">
+                    <div class="field mini select">
+                        <label class="field__label">Дата</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="date" />
+                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Время</label>
+                        <div class="field__select">
+                            <input class="field__select__value" type="time" />
+                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="field mini select">
+                        <label class="field__label">Тренер</label>
+                        <div class="field__select">
+                            <input class="field__select__value" />
+                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="head">
+                    <h3 class="title">Мероприятие</h3>
+                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
+                </div>
+                <div class="fields">
+                    <input type="date" placeholder="Дата" />
+                    <input type="time" placeholder="Время" />
+                    <input type="text" placeholder="Тренер" />
+                </div>
+            </div>
+            <div class="event">
+                <div class="head">
+                    <h3 class="title">Мероприятие</h3>
+                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
+                </div>
+                <div class="fields">
+                    <input type="date" placeholder="Дата" />
+                    <input type="time" placeholder="Время" />
+                    <input type="text" placeholder="Тренер" />
+                </div>
+            </div>
+            <h3 class="settings__title">Условия записи по коду</h3>
+            <div class="settings__btns">
+                <div class="radio">
+                    <input class="custom-radio" type="radio" id="first" name="condition" checked />
+                    <label for="first">Не использовать код доступа</label>
+                </div>
+                <div class="radio">
+                    <input class="custom-radio" type="radio" id="second" name="condition" />
+                    <label for="second">Требовать регистрацию</label>
+                </div>
+                <div class="radio">
+                    <input class="custom-radio" type="radio" id="third" name="condition" />
+                    <label for="third">Запросить только имя и фамилию</label>
+                </div>
+                <div class="radio">
+                    <input class="custom-radio" type="radio" id="four" name="condition" />
+                    <label for="four">Не требовать регистрацию, имя и фамилию</label>
+                </div>
             </div>
         </div>
     </div>

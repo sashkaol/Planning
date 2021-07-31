@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class FiltersComponent {
     isActive = 'group';
+    isSelected = {
+        program: '',
+        period: '',
+        status: ''
+    }
     isOpen = '';
     programValue = '';
     periodValue = '';

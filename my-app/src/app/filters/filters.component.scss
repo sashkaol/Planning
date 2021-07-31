@@ -1,92 +1,14 @@
 @import "../../styles.scss";
+@import '../../app/fields/elements.scss';
 $active: rgba(0, 0, 0, 0.87);
 $passive: rgba(0, 0, 0, 0.54);
 $selected: #1071ff;
+$hover: #f6f6f6;
 
 .container {
     max-width: 1146px;
     margin: 0 auto;
     width: 100%;
-}
-.tabs {
-    font-family: $mainFont;
-    color: $passive;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    .tab {
-        margin-right: 24px;
-        height: 34px;
-        border-bottom: 2px solid #ffffff;
-    }
-    :hover {
-        cursor: pointer;
-        color: $active;
-        border-bottom: 2px solid #1071ff;
-    }
-}
-.active {
-    color: $active;
-    border-bottom: 2px solid $selected !important;
-}
-.filters {
-    .fields {
-        margin-top: 56px;
-        margin-right: 30px;
-        display: flex;
-        input {
-            outline: none;
-            border: none;
-        }
-        .field {
-            margin-right: 30px;
-            outline: none;
-            height: 40px;
-            border: none;
-            max-width: 166px;
-            width: 100%;
-            font-family: $mainFont;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            display: flex;
-            font-weight: 500;
-            &__label {
-                font-size: 10px;
-                line-height: 12px;
-                color: $passive;
-                padding-left: 3px;
-            }
-            &__select {
-                border: none;
-                outline: none;
-                background-color: #ffffff;
-                height: 27px;
-                font-family: inherit;
-                font-size: 12px;
-                line-height: 16px;
-                display: flex;
-                justify-content: space-between;
-                &__value {
-                    font-family: inherit;
-                    font-size: inherit;
-                    font-weight: inherit;
-                    line-height: inherit;
-                    max-width: 140px;
-                    width: 100%;
-                }
-            }
-            :hover {
-                cursor: pointer;
-            }
-        }
-        .select {
-            flex-direction: column;
-            position: relative;
-        }
-    }
 }
 .other {
     margin-top: 36px;
@@ -136,40 +58,8 @@ $selected: #1071ff;
         width: 100%;
     }
 }
-.options {
-    position: absolute;
-    top: 48px;
-    background: #ffffff;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
-    border-radius: 4px;
-    width: 180px;
-    padding: 18px 16px;
-    box-sizing: border-box;
-    display: none;
-    .option {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
-        display: flex;
-        justify-content: space-between;
-    }
-    :hover {
-        cursor: pointer;
-        color: $selected;
-    }
-    :hover::after {
-        content: url("../../assets/ok.svg");
-    }
-    :not(:last-child) {
-        margin-bottom: 20px;
-    }
-}
-.open {
-    display: block;
-}
-.selectedItem {
-    color: $selected;
-}
-.selectedItem::after {
-    content: url("../../assets/ok.svg");
+.fields {
+    margin-top: 56px;
+    margin-right: 30px;
+    display: flex;
 }

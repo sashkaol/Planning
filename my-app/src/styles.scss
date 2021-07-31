@@ -36,5 +36,11 @@ $my-app-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 $mainFont: 'Montserrat', sans-serif;
+$active: rgba(0, 0, 0, 0.87);
+$passive: rgba(0, 0, 0, 0.54);
+$selected: #1071ff;
+$hover: #f6f6f6;
+$light: rgba(0, 0, 0, 0.38);
+$solight: rgba(0, 0, 0, 0.08);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
