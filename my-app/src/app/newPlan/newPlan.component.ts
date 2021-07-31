@@ -38,4 +38,29 @@ export class NewPlanComponent {
         this.value = value
         this.isSelect = value
     }
+
+    isSelected = {
+        position: '',
+        group: '',
+        exp: '',
+    }
+    positionValue = '';
+    groupValue = '';
+    expValue = '';
+
+    public selectFilter(value: string, el: string) {
+        switch (el) {
+            case 'position':
+                this.positionValue = value
+                break;
+            case 'group':
+                this.groupValue = value
+                break;
+                case 'exp':
+                this.expValue = value
+                break;
+            default:
+                break;
+        }    
+    }
 }

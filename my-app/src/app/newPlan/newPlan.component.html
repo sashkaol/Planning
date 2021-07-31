@@ -20,7 +20,9 @@
                 <label class="field__label">Программа</label>
                 <div class="field__select" (click)="open('program')">
                     <input class="field__select__value" readonly placeholder="Выберите" [value]="value" />
-                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    <div class="round-but">
+                        <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    </div>
                 </div>
                 <div id="program" class="options important" [class.open]="isOpen == 'program'">
                     <div [class.selectedItem]="isSelect == item.plan" class="option" *ngFor="let item of list"
@@ -147,56 +149,56 @@
                         <img class="search__icon" src="../../assets/search.svg" alt="search">
                         <input class="search__field" type="text" placeholder="Поиск" />
                     </div>
-                    <!-- <div class="field select">
-                        <label class="field__label">Программа</label>
-                        <div class="field__select" (click)="open('program')">
-                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                    <div class="field select">
+                        <label class="field__label">Должность</label>
+                        <div class="field__select" (click)="open('position')">
+                            <input class="field__select__value" readonly [value]="positionValue"
                                 placeholder="Выберите" />
                             <div class="round-but">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                             </div>
                         </div>
-                        <div id="program" class="options" [class.open]="isOpen == 'program'">
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
-                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
-                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        <div id="position" class="options" [class.open]="isOpen == 'position'">
+                            <div class="option" [class.selectedItem]="isSelected.position == 'Все'"
+                                (click)="selectFilter('Все', 'position'); isSelected.position = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.position == 'Не все'"
+                                (click)="selectFilter('Не все', 'position'); isSelected.position = 'Не все'">Не все</div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="col">
-                    <!-- <div class="field select">
-                        <label class="field__label">Программа</label>
-                        <div class="field__select" (click)="open('program')">
-                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                    <div class="field select">
+                        <label class="field__label">Группа</label>
+                        <div class="field__select" (click)="open('group')">
+                            <input class="field__select__value" readonly [value]="groupValue"
                                 placeholder="Выберите" />
                             <div class="round-but">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                             </div>
                         </div>
-                        <div id="program" class="options" [class.open]="isOpen == 'program'">
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
-                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
-                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        <div class="options higher" [class.open]="isOpen == 'group'">
+                            <div class="option" [class.selectedItem]="isSelected.group == 'Все'"
+                                (click)="selectFilter('Все', 'group'); isSelected.group = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.group == 'Не все'"
+                                (click)="selectFilter('Не все', 'group'); isSelected.group = 'Не все'">Не все</div>
                         </div>
-                    </div> -->
-                    <!-- <div class="field select">
+                    </div>
+                    <div class="field select">
                         <label class="field__label">Программа</label>
-                        <div class="field__select" (click)="open('program')">
-                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                        <div class="field__select" (click)="open('exp')">
+                            <input class="field__select__value" readonly [value]="expValue"
                                 placeholder="Выберите" />
                             <div class="round-but">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                             </div>
                         </div>
-                        <div id="program" class="options" [class.open]="isOpen == 'program'">
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
-                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
-                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
-                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        <div id="program" class="options" [class.open]="isOpen == 'exp'">
+                            <div class="option" [class.selectedItem]="isSelected.exp == 'Все'"
+                                (click)="selectFilter('Все', 'exp'); isSelected.exp = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.exp == 'Не все'"
+                                (click)="selectFilter('Не все', 'exp'); isSelected.exp = 'Не все'">Не все</div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div class="other">
@@ -205,14 +207,22 @@
                     <img class="filters" src="../../assets/filters.svg" alt="filters">
                     Настроить
                 </div>
-                <div class="other__button drop ellipse-but grey">
+                <div class="other__button drop ellipse-but grey" (click)="positionValue = ''; expValue = ''; groupValue = ''; isSelected.position = ''; isSelected.group = ''; isSelected.exp = ''">
                     &#10005; Сбросить
                 </div>
             </div>
-            <div>
-                <div class="radio">
-                    <input class="custom-radio" type="checkbox" id="first" name="condition" />
-                    <label for="first">Не использовать код доступа</label>
+            <div class="check-field">
+                <div class="check all">
+                    <input class="custom-check" type="checkbox" id="all" name="all" />
+                    <label for="all">Все пользователи</label>
+                </div>
+                <div class="check people">
+                    <input class="custom-check item" type="checkbox" id="sec" name="people" />
+                    <label for="sec"><span>Чел</span></label>
+                </div>
+                <div class="check people">
+                    <input class="custom-check item" type="checkbox" id="th" name="people" />
+                    <label for="th"><span>Не чел</span></label>
                 </div>
             </div>
         </div>

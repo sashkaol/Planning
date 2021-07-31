@@ -164,10 +164,41 @@
         width: 100%;
     }
 }
+.search {
+    &__field {
+        margin-left: 18px;
+        font-family: $mainFont;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $active;
+    }
+    ::placeholder {
+        color: rgba(0, 0, 0, 0.38);
+    }
+    &__icon {
+        max-width: 15px;
+        width: 100%;
+    }
+}
 .page.people.open {
     display: flex;
     .select {
-        width: 50%;
+        .check-field {
+            margin-left: -8px;
+        }
+        .title {
+            margin-block-end: 0;
+        }
+        .fields {
+            display: flex;
+            .higher {
+                z-index: 100000;
+            }
+            .field {
+                margin-top: 34px;
+            }
+        }
         .other {
             &__text {
                 margin-right: 34px;
@@ -175,6 +206,68 @@
             &__button {
                 margin-right: 10px;
             }
+        }
+        .check {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $active;
+            padding-left: 8px;
+            .custom-check {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+            .custom-check + label {
+                display: inline-flex;
+                align-items: center;
+                user-select: none;
+            }
+            .custom-check + label::before {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url("../../assets/chechEnabled.svg");
+                margin-right: 16px;
+            }
+            .custom-check:not(:disabled):not(:checked) + label:hover::before {
+                background-image: url("../../assets/checkHover.svg");
+                cursor: pointer;
+            }
+            .custom-check:not(:disabled):active + label::before {
+                background-image: url("../../assets/checkPress.svg");
+            }
+            .custom-check:checked + label::before {
+                background-image: url("../../assets/checkActive.svg");
+            }
+        }
+        .check:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        .check.all {
+            margin-top: 42px;
+        }
+        .check.people {
+            height: 36px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            max-width: 390px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: $animBackGroung;
+            span {
+                padding-left: 28px;
+            }
+        }
+        .check.people:hover {
+            background-color: $hover;
+            cursor: pointer;
+            transition: $animBackGroung;
         }
     }
     .all {
