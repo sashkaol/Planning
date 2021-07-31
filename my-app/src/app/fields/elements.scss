@@ -1,5 +1,6 @@
 @import "../../styles.scss";
-
+$pressedBlue: #dae9ff;
+$pressedGrey: #dcdcdc;
 // вкладки
 
 .tabs {
@@ -16,18 +17,21 @@
         margin-right: 24px;
         height: 34px;
         border-bottom: 2px solid #ffffff;
-        transition: color border-color 0.3s ease-out;
+        transition: color 0.3s ease-out;
+        transition: border-color 0.3s ease-out;
     }
     .tab.active {
         color: $active;
         border-bottom: 2px solid $selected;
-        transition: color border-color 0.3s ease-out;
+        transition: color 0.3s ease-out;
+        transition: border-color 0.3s ease-out;
     }
     .tab:hover {
         cursor: pointer;
         color: $active;
         border-bottom: 2px solid #1071ff;
-        transition: color border-color 0.3s ease-out;
+        transition: color 0.3s ease-out;
+        transition: border-color, color 0.3s ease-out;
     }
 }
 .tabs.window {
@@ -42,6 +46,7 @@
         border: none;
     }
     .field {
+        transition: border-color 0.3s ease-out;
         margin-right: 30px;
         outline: none;
         height: 40px;
@@ -122,12 +127,11 @@
         }
     }
     .field:active {
-        //cursor: pointer;
         border-bottom: 1px $selected solid;
-        color: $selected;
-        &__label {
-            color:  $selected;
-        }
+    }
+    .field:hover {
+        transition: border-color 0.3s ease-out;
+        border-bottom: 1px $selected solid;
     }
     .field.mini {
         max-width: 246px;
@@ -146,3 +150,85 @@
         position: relative;
     }
 }
+
+.round-but {
+    border-radius: 50%;
+    width: 40px;
+    height: 100%;
+    transition: $animBackGroung;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.round-but:hover {
+    cursor: pointer;
+    transition: $animBackGroung;
+    background-color: $hover;
+}
+.round-but:active {
+    cursor: pointer;
+    transition: $animBackGroung;
+    background-color: $pressedGrey;
+}
+
+.ellipse-but {
+    border-radius: 24px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    transition: $animBackGroung;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ellipse-but.blue:hover {
+    cursor: pointer;
+    background-color: $blueHover;
+    transition: $animBackGroung;
+}
+.ellipse-but.grey:hover {
+    cursor: pointer;
+    background-color: $hover;
+    transition: $animBackGroung;
+}
+.ellipse-but.blue:active {
+    cursor: pointer;
+    background-color: $pressedBlue;
+    transition: $animBackGroung;
+}
+.ellipse-but.grey:active {
+    cursor: pointer;
+    background-color: $pressedGrey;
+    transition: $animBackGroung;
+}
+.other {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-family: $mainFont;
+    font-size: 12px;
+    line-height: 16px;
+    color: $passive;
+    &__text {
+        font-weight: 500;
+        margin-right: 94px;
+    }
+    &__button {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+    &__button:hover {
+        cursor: pointer;
+    }
+    .settings {
+        color: $selected;
+        margin-right: 41px;
+        .filters {
+            margin-right: 12px;
+            max-width: 13px;
+            width: 100%;
+        }
+    }
+}
+

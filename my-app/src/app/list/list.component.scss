@@ -1,4 +1,4 @@
-@import "../../styles.scss";
+@import '../fields/elements.scss';
 
 .list {
     font-family: $mainFont;
@@ -92,15 +92,6 @@
 }
 .points {
     @include col(points);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: $animBackGroung;
-}
-.points:hover {
-    background-color: #d5d5d5;
-    transition: $animBackGroung;
 }
 .passive {
     color: rgba(0, 0, 0, 0.38);

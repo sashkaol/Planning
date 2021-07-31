@@ -40,14 +40,14 @@
                         <label class="field__label">Дата</label>
                         <div class="field__select">
                             <input class="field__select__value" type="date" />
-                            
+
                         </div>
                     </div>
                     <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
-                            
+
                         </div>
                     </div>
                     <div class="field mini select">
@@ -69,21 +69,23 @@
                         <label class="field__label">Дата</label>
                         <div class="field__select">
                             <input class="field__select__value" type="date" />
-                            
+
                         </div>
                     </div>
                     <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
-                            
+
                         </div>
                     </div>
                     <div class="field mini select">
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
                             <input class="field__select__value" />
-                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,6 +139,91 @@
         </div>
     </div>
     <div class="page people" [class.open]="isActive == 'people'">
-        Люди
+        <div class="select">
+            <h3 class="title">Доступные участники</h3>
+            <div class="fields">
+                <div class="col">
+                    <div class="field search">
+                        <img class="search__icon" src="../../assets/search.svg" alt="search">
+                        <input class="search__field" type="text" placeholder="Поиск" />
+                    </div>
+                    <!-- <div class="field select">
+                        <label class="field__label">Программа</label>
+                        <div class="field__select" (click)="open('program')">
+                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                                placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="program" class="options" [class.open]="isOpen == 'program'">
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
+                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
+                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col">
+                    <!-- <div class="field select">
+                        <label class="field__label">Программа</label>
+                        <div class="field__select" (click)="open('program')">
+                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                                placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="program" class="options" [class.open]="isOpen == 'program'">
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
+                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
+                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="field select">
+                        <label class="field__label">Программа</label>
+                        <div class="field__select" (click)="open('program')">
+                            <input class="field__select__value" id="select-program" readonly [value]="programValue"
+                                placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="program" class="options" [class.open]="isOpen == 'program'">
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
+                                (click)="selectItem('Все', 'program'); isSelected.program = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.program == 'Не все'"
+                                (click)="selectItem('Не все', 'program'); isSelected.program = 'Не все'">Не все</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="other">
+                <div class="other__text">42 пользователя</div>
+                <div class="other__button settings ellipse-but blue">
+                    <img class="filters" src="../../assets/filters.svg" alt="filters">
+                    Настроить
+                </div>
+                <div class="other__button drop ellipse-but grey">
+                    &#10005; Сбросить
+                </div>
+            </div>
+            <div>
+                <div class="radio">
+                    <input class="custom-radio" type="checkbox" id="first" name="condition" />
+                    <label for="first">Не использовать код доступа</label>
+                </div>
+            </div>
+        </div>
+        <div class="all">
+            <h3 class="title">Участники мероприятия</h3>
+            <div class="empty">
+                <img src="../../assets/picture.svg" alt="">
+                <div>
+                    Наполните группу, перетаскивая участников из списка доступных в левой колонке
+                </div>
+            </div>
+        </div>
     </div>
 </div>

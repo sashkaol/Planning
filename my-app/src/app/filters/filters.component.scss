@@ -5,51 +5,6 @@
     margin: 0 auto;
     width: 100%;
 }
-.other {
-    margin-top: 36px;
-    display: flex;
-    align-items: center;
-    font-style: normal;
-    font-family: $mainFont;
-    font-size: 12px;
-    line-height: 16px;
-    color: $passive;
-    &__text {
-        font-weight: 500;
-        margin-right: 94px;
-    }
-    &__button {
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-    }
-    &__button:hover {
-        cursor: pointer;
-    }
-    .button {
-        border-radius: 24px;
-        padding: 10px 16px;
-        box-sizing: border-box;
-        transition: $animBackGroung;
-    }
-    .button:hover {
-        background-color: $blueHover;
-        transition: $animBackGroung;
-    }
-    .button.drop:hover {
-        background-color: $hover;
-        transition: $animBackGroung;
-    }
-    .settings {
-        color: $selected;
-        margin-right: 41px;
-        .filters {
-            margin-right: 12px;
-            max-width: 13px;
-            width: 100%;
-        }
-    }
-}
 .search {
     &__field {
         margin-left: 18px;

@@ -15,7 +15,9 @@
                 <label class="field__label">Сортировка</label>
                 <div class="field__select" (click)="open('sorted')">
                     <input class="field__select__value" readonly [value]="sortedValue" placeholder="Выберите" />
-                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    <div class="round-but">
+                        <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    </div>
                 </div>
                 <div id="sorted" class="options" [class.open]="isOpen == 'sorted'">
                     <div class="option" [class.selectedItem]="isSelected.sorted == 'По прогрессу обучения'"
@@ -39,7 +41,9 @@
                 <div class="field__select" (click)="open('program')">
                     <input class="field__select__value" id="select-program" readonly [value]="programValue"
                         placeholder="Выберите" />
-                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    <div class="round-but">
+                        <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    </div>
                 </div>
                 <div id="program" class="options" [class.open]="isOpen == 'program'">
                     <div class="option" [class.selectedItem]="isSelected.program == 'Все'"
@@ -53,7 +57,9 @@
                 <div class="field__select" (click)="open('period')">
                     <input class="field__select__value" id="select-period" [value]="periodValue" readonly
                         placeholder="Выберите" />
-                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    <div class="round-but">
+                        <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    </div>
                 </div>
                 <div id="period" class="options" [class.open]="isOpen == 'period'">
                     <div class="option" [class.selectedItem]="isSelected.period == 'Июнь 2019'"
@@ -68,7 +74,9 @@
                 <div class="field__select" (click)="open('status')">
                     <input class="field__select__value" id="select-status" [value]="statusValue" readonly
                         placeholder="Выберите" />
-                    <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    <div class="round-but">
+                        <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                    </div>
                 </div>
                 <div id="status" class="options" [class.open]="isOpen == 'status'">
                     <div class="option" [class.selectedItem]="isSelected.status == 'Все'"
@@ -80,11 +88,11 @@
         </div>
         <div class="other">
             <div class="other__text">34 сессии</div>
-            <div class="other__button settings button">
+            <div class="other__button settings ellipse-but blue">
                 <img class="filters" src="../../assets/filters.svg" alt="filters">
                 Настроить фильтр
             </div>
-            <div class="other__button drop button"
+            <div class="other__button drop ellipse-but grey"
                 (click)="periodValue = ''; programValue = ''; statusValue = ''; isSelected.status = ''; isSelected.period = ''; isSelected.program = ''">
                 &#10005; Сбросить</div>
         </div>

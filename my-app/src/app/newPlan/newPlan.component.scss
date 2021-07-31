@@ -1,4 +1,4 @@
-@import '../fields/elements.scss';
+@import "../fields/elements.scss";
 
 .new {
     height: max-content;
@@ -141,26 +141,76 @@
     }
     .head:not(:first-child) {
         margin-top: 34px;
-    }   
+    }
     .fields {
         margin-top: 34px;
         display: flex;
     }
     input[type="time"]::-webkit-calendar-picker-indicator,
     input[type="date"]::-webkit-calendar-picker-indicator {
-        background: url('../../assets/arrow.svg') no-repeat center;
+        background: url("../../assets/arrow.svg") no-repeat center;
         cursor: pointer;
     }
     input[type="date"]::before {
-        content: url('../../assets/datepicker.svg');
+        content: url("../../assets/datepicker.svg");
         margin-right: 18px;
     }
     input[type="time"]::before {
-        content: url('../../assets/clock.svg');
+        content: url("../../assets/clock.svg");
         margin-right: 18px;
     }
     .field__select__value {
         max-width: 246px;
         width: 100%;
+    }
+}
+.page.people.open {
+    display: flex;
+    .select {
+        width: 50%;
+        .other {
+            &__text {
+                margin-right: 34px;
+            }
+            &__button {
+                margin-right: 10px;
+            }
+        }
+    }
+    .all {
+        width: 50%;
+        .empty {
+            border: 1px dashed $solight;
+            box-sizing: border-box;
+            border-radius: 4px;
+            max-width: 394px;
+            max-height: 517px;
+            height: 100%;
+            width: 100%;
+            margin-top: 26px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $light;
+            text-align: center;
+            img {
+                margin-bottom: 24px;
+            }
+            div {
+                max-width: 317px;
+                width: 100%;
+            }
+        }
+    }
+    .title {
+        color: $active;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
     }
 }
