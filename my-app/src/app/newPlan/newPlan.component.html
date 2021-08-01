@@ -16,6 +16,7 @@
     </div>
     <div class="page basic" [class.open]="isActive == 'basic'">
         <div class="fields">
+            <!-- this is GOOD realisation of selects because of it's easy expanding -->
             <div class="field select big">
                 <label class="field__label">Программа</label>
                 <div class="field__select" (click)="open('program')">
@@ -39,6 +40,7 @@
                 </div>
                 <div class="fields">
                     <div class="field mini select">
+                        <!-- that's not a true select, i have used usual datepicker with bautiful field -->
                         <label class="field__label">Дата</label>
                         <div class="field__select">
                             <input class="field__select__value" type="date" />
@@ -46,6 +48,7 @@
                         </div>
                     </div>
                     <div class="field mini select">
+                        <!-- yes, here too -->
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
@@ -56,7 +59,9 @@
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
                             <input class="field__select__value" />
-                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +119,9 @@
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
                             <input class="field__select__value" />
-                            <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,11 +152,14 @@
             <h3 class="title">Доступные участники</h3>
             <div class="fields">
                 <div class="col">
-                    <div class="field search">
+                    <div class="field search" [class.close]="!(selectALot.includes('Поиск'))">
                         <img class="search__icon" src="../../assets/search.svg" alt="search">
                         <input class="search__field" type="text" placeholder="Поиск" />
                     </div>
-                    <div class="field select">
+                    <!-- and this is BAD realisation, i was tired when i wrote it. -->
+                    <!-- it exists because i too late understand that i needed data and -->
+                    <!-- separate component for select -->
+                    <div class="field select" [class.close]="!(selectALot.includes('Должность'))">
                         <label class="field__label">Должность</label>
                         <div class="field__select" (click)="open('position')">
                             <input class="field__select__value" readonly [value]="positionValue"
@@ -162,16 +172,32 @@
                             <div class="option" [class.selectedItem]="isSelected.position == 'Все'"
                                 (click)="selectFilter('Все', 'position'); isSelected.position = 'Все'">Все</div>
                             <div class="option" [class.selectedItem]="isSelected.position == 'Не все'"
-                                (click)="selectFilter('Не все', 'position'); isSelected.position = 'Не все'">Не все</div>
+                                (click)="selectFilter('Не все', 'position'); isSelected.position = 'Не все'">Не все
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field select" [class.close]="!(selectALot.includes('Подразделение'))">
+                        <label class="field__label">Подразделение</label>
+                        <div class="field__select" (click)="open('division')">
+                            <input class="field__select__value" readonly [value]="division" placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="program" class="options" [class.open]="isOpen == 'division'">
+                            <div class="option" [class.selectedItem]="isSelected.division == 'Все'"
+                                (click)="selectFilter('Все', 'division'); isSelected.division = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.division == 'Не все'"
+                                (click)="selectFilter('Не все', 'division'); isSelected.division = 'Не все'">Не все
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="field select">
+                    <div class="field select" [class.close]="!(selectALot.includes('Группа'))">
                         <label class="field__label">Группа</label>
                         <div class="field__select" (click)="open('group')">
-                            <input class="field__select__value" readonly [value]="groupValue"
-                                placeholder="Выберите" />
+                            <input class="field__select__value" readonly [value]="groupValue" placeholder="Выберите" />
                             <div class="round-but">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                             </div>
@@ -183,45 +209,100 @@
                                 (click)="selectFilter('Не все', 'group'); isSelected.group = 'Не все'">Не все</div>
                         </div>
                     </div>
-                    <div class="field select">
-                        <label class="field__label">Программа</label>
+                    <div class="field select" [class.close]="!(selectALot.includes('Стаж'))">
+                        <label class="field__label">Стаж</label>
                         <div class="field__select" (click)="open('exp')">
-                            <input class="field__select__value" readonly [value]="expValue"
-                                placeholder="Выберите" />
+                            <input class="field__select__value" readonly [value]="expValue" placeholder="Выберите" />
                             <div class="round-but">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
                             </div>
                         </div>
-                        <div id="program" class="options" [class.open]="isOpen == 'exp'">
+                        <div class="options" [class.open]="isOpen == 'exp'">
                             <div class="option" [class.selectedItem]="isSelected.exp == 'Все'"
                                 (click)="selectFilter('Все', 'exp'); isSelected.exp = 'Все'">Все</div>
                             <div class="option" [class.selectedItem]="isSelected.exp == 'Не все'"
                                 (click)="selectFilter('Не все', 'exp'); isSelected.exp = 'Не все'">Не все</div>
                         </div>
                     </div>
+                    <div class="field select" [class.close]="!(selectALot.includes('Округ'))">
+                        <label class="field__label">Округ</label>
+                        <div class="field__select" (click)="open('region')">
+                            <input class="field__select__value" readonly [value]="region" placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="options" [class.open]="isOpen == 'region'">
+                            <div class="option" [class.selectedItem]="isSelected.region == 'Все'"
+                                (click)="selectFilter('Все', 'region'); isSelected.region = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.region == 'Не все'"
+                                (click)="selectFilter('Не все', 'region'); isSelected.region = 'Не все'">Не все
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field select" [class.close]="!(selectALot.includes('Город'))">
+                        <label class="field__label">Город</label>
+                        <div class="field__select" (click)="open('city')">
+                            <input class="field__select__value" readonly [value]="city" placeholder="Выберите" />
+                            <div class="round-but">
+                                <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="options" [class.open]="isOpen == 'city'">
+                            <div class="option" [class.selectedItem]="isSelected.city == 'Все'"
+                                (click)="selectFilter('Все', 'city'); isSelected.city = 'Все'">Все</div>
+                            <div class="option" [class.selectedItem]="isSelected.city == 'Не все'"
+                                (click)="selectFilter('Не все', 'city'); isSelected.city = 'Не все'">Не все
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="other">
                 <div class="other__text">42 пользователя</div>
-                <div class="other__button settings ellipse-but blue">
-                    <img class="filters" src="../../assets/filters.svg" alt="filters">
-                    Настроить
+                <div class="menu">
+                    <div class="other__button settings ellipse-but blue" (click)="open('settings')">
+                        <img class="filters" src="../../assets/filters.svg" alt="filters">
+                        Настроить
+                    </div>
+                    <div class="options" [class.open]="isOpen == 'settings'">
+                        <div class="label">Системные поля</div>
+                        <ul>
+                            <li (click)="pushAtLot('Поиск')" [class.selectItem]="selectALot.includes('Поиск')">Поиск
+                            </li>
+                            <li (click)="pushAtLot('Группа')" [class.selectItem]="selectALot.includes('Группа')">Группа
+                            </li>
+                            <li (click)="pushAtLot('Должность')" [class.selectItem]="selectALot.includes('Должность')">
+                                Должность</li>
+                            <li (click)="pushAtLot('Стаж')" [class.selectItem]="selectALot.includes('Стаж')">Стаж</li>
+                        </ul>
+                        <div class="label">Дополнительные поля</div>
+                        <ul>
+                            <li (click)="pushAtLot('Подразделение')"
+                                [class.selectItem]="selectALot.includes('Подразделение')">Подразделение</li>
+                            <li (click)="pushAtLot('Округ')" [class.selectItem]="selectALot.includes('Округ')">Округ
+                            </li>
+                            <li (click)="pushAtLot('Город')" [class.selectItem]="selectALot.includes('Город')">Город
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-                <div class="other__button drop ellipse-but grey" (click)="positionValue = ''; expValue = ''; groupValue = ''; isSelected.position = ''; isSelected.group = ''; isSelected.exp = ''">
+                <div class="other__button drop ellipse-but grey" (click)="clear()">
                     &#10005; Сбросить
                 </div>
             </div>
             <div class="check-field">
                 <div class="check all">
-                    <input class="custom-check" type="checkbox" id="all" name="all" />
+                    <input class="custom-check" type="checkbox" id="all" name="all" (change)="checkAll()" />
                     <label for="all">Все пользователи</label>
                 </div>
                 <div class="check people">
-                    <input class="custom-check item" type="checkbox" id="sec" name="people" />
+                    <input class="custom-check item" type="checkbox" id="sec" name="people" (change)="checkNotAll()" />
                     <label for="sec"><span>Чел</span></label>
                 </div>
                 <div class="check people">
-                    <input class="custom-check item" type="checkbox" id="th" name="people" />
+                    <input class="custom-check item" type="checkbox" id="th" name="people" (change)="checkNotAll()" />
                     <label for="th"><span>Не чел</span></label>
                 </div>
             </div>

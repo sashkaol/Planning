@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
 
+  // open window for new plan
   openAdd = false;
   onClose(increased: any) {
     if (!(increased)) {

@@ -10,13 +10,6 @@ import { Plans } from './mock-list'
 export class ListComponent {
     title = 'list';
     data = Plans;
-    xPos = 0;
-    yPos = 0;
     shown = false;
 
-    public show(ev: any) {
-        this.xPos = ev.clientX - 180
-        this.yPos = ev.clientX + 20
-        this.shown = true
-    }
 }

@@ -149,7 +149,23 @@
     input[type="time"]::-webkit-calendar-picker-indicator,
     input[type="date"]::-webkit-calendar-picker-indicator {
         background: url("../../assets/arrow.svg") no-repeat center;
+        transition: $animBackGroung;
+        border-radius: 50%;
+        width: 25px;
+        height: 20px;
+    }
+    input[type="time"]::-webkit-calendar-picker-indicator:hover,
+    input[type="date"]::-webkit-calendar-picker-indicator:hover {
+        background-color: $hover;
+        border-radius: 50%;
         cursor: pointer;
+        transition: $animBackGroung;
+    }
+    input[type="time"]::-webkit-calendar-picker-indicator:active,
+    input[type="date"]::-webkit-calendar-picker-indicator:active {
+        background-color: $pressedGrey;
+        cursor: pointer;
+        transition: $animBackGroung;
     }
     input[type="date"]::before {
         content: url("../../assets/datepicker.svg");
@@ -183,6 +199,7 @@
 }
 .page.people.open {
     display: flex;
+    position: relative;
     .select {
         .check-field {
             margin-left: -8px;
@@ -197,6 +214,12 @@
             }
             .field {
                 margin-top: 34px;
+                .options.open {
+                    z-index: 10000000;
+                }
+            }
+            .field.close {
+                display: none;
             }
         }
         .other {
@@ -205,6 +228,68 @@
             }
             &__button {
                 margin-right: 10px;
+            }
+            .menu {
+                position: relative;
+            }
+            .options {
+                display: none;
+            }
+            .options.open {
+                display: block;
+                background: #ffffff;
+                box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+                border-radius: 4px;
+                padding: 16px 0;
+                box-sizing: border-box;
+                position: absolute;
+                top: 44px;
+                width: 168px;
+                height: 334px;
+                z-index: 100;
+                .label {
+                    font-style: normal;
+                    padding-left: 16px;
+                    font-weight: 500;
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: $passive;
+                }
+                ul {
+                    padding-inline-start: 0;
+                }
+                li {
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: $active;
+                    list-style: none;
+                    height: 36px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    transition: $animBackGroung;
+                }
+                li:hover {
+                    background-color: $hover;
+                    cursor: pointer;
+                    color: $selected;
+                    transition: $animBackGroung;
+                }
+                li:active {
+                    background-color: $pressedGrey;
+                }
+                li:hover::after {
+                    content: url("../../assets/ok.svg");
+                }
+                li.selectItem {
+                    color: $selected;
+                }
+                li.selectItem::after {
+                    content: url("../../assets/ok.svg");
+                }
             }
         }
         .check {
@@ -291,6 +376,7 @@
             line-height: 16px;
             color: $light;
             text-align: center;
+            background-color: #fff;
             img {
                 margin-bottom: 24px;
             }
