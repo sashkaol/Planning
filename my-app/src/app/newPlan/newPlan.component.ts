@@ -12,6 +12,16 @@ export class NewPlanComponent {
     isSelect = ''
     isOpen = '';
     value = '';
+    coachValue = {
+        first: '',
+        second: '',
+        third: ''
+    }
+    selectedCoach = {
+        first: '',
+        second: '',
+        third: ''
+    }
     coach = [
         'Кто-то',
         'Еще кто-то'
@@ -46,6 +56,25 @@ export class NewPlanComponent {
             this.isOpen = id
         } else {
             this.isOpen = ''
+        }
+    }
+
+    public selectCoach(value: string, id: string) {
+        switch (id) {
+            case 'first':
+                this.coachValue.first = value
+                this.selectedCoach.first = value
+                break;
+            case 'second':
+                this.coachValue.second = value
+                this.selectedCoach.second = value
+                break;
+            case 'third':
+                this.coachValue.third = value
+                this.selectedCoach.third = value
+                break;
+            default:
+                break;
         }
     }
 
@@ -143,11 +172,12 @@ export class NewPlanComponent {
             region: '',
             city: ''
         },
-        this.positionValue = '',
-        this.groupValue = '',
-        this.expValue = '',
-        this.division = '',
-        this.region = '',
-        this.city = ''
+            this.positionValue = '',
+            this.groupValue = '',
+            this.expValue = '',
+            this.division = '',
+            this.region = '',
+            this.city = ''
     }
 }
+

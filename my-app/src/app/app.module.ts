@@ -22,7 +22,7 @@ import {MatMenuModule} from '@angular/material/menu';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatMenuModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

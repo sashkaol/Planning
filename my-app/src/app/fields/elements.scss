@@ -31,7 +31,7 @@ $pressedGrey: #dcdcdc;
         color: $active;
         border-bottom: 2px solid #1071ff;
         transition: color 0.3s ease-out;
-        transition: border-color, color 0.3s ease-out;
+        transition: border-color 0.3s ease-out;
     }
 }
 .tabs.window {

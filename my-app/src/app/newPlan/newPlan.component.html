@@ -58,9 +58,14 @@
                     <div class="field mini select">
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
-                            <input class="field__select__value" />
-                            <div class="round-but">
+                            <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
+                            <input class="field__select__value" readonly [value]=coachValue.first />
+                            <div class="round-but" (click)="open('coach-1')">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                            <div class="options important" style="width: 240px;" [class.open]="isOpen == 'coach-1'">
+                                <div [class.selectedItem]="selectedCoach.first == item" class="option" *ngFor="let item of coach"
+                                    (click)="selectCoach(item, 'first')">{{ item }}</div>
                             </div>
                         </div>
                     </div>
@@ -89,9 +94,14 @@
                     <div class="field mini select">
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
-                            <input class="field__select__value" />
-                            <div class="round-but">
+                            <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
+                            <input class="field__select__value" readonly [value]=coachValue.second />
+                            <div class="round-but" (click)="open('coach-2')">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                            <div class="options important" style="width: 240px;" [class.open]="isOpen == 'coach-2'">
+                                <div [class.selectedItem]="selectedCoach.second == item" class="option" *ngFor="let item of coach"
+                                    (click)="selectCoach(item, 'second')">{{ item }}</div>
                             </div>
                         </div>
                     </div>
@@ -118,9 +128,14 @@
                     <div class="field mini select">
                         <label class="field__label">Тренер</label>
                         <div class="field__select">
-                            <input class="field__select__value" />
-                            <div class="round-but">
+                            <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
+                            <input class="field__select__value" readonly [value]=coachValue.third />
+                            <div class="round-but" (click)="open('coach-3')">
                                 <img style="max-width: 11px; width: 100%;" src="../../assets/arrow.svg" alt="">
+                            </div>
+                            <div class="options important" style="width: 240px;" [class.open]="isOpen == 'coach-3'">
+                                <div [class.selectedItem]="selectedCoach.third == item" class="option" *ngFor="let item of coach"
+                                    (click)="selectCoach(item, 'third')">{{ item }}</div>
                             </div>
                         </div>
                     </div>
@@ -311,6 +326,7 @@
             <h3 class="title">Участники мероприятия</h3>
             <div class="empty">
                 <img src="../../assets/picture.svg" alt="">
+                <!-- drag'n'drop says bye -->
                 <div>
                     Наполните группу, перетаскивая участников из списка доступных в левой колонке
                 </div>
