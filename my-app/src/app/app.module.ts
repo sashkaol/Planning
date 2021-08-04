@@ -4,10 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Planning } from './planning/planning.component';
 import { ListComponent } from './list/list.component';
-import { FiltersComponent } from './filters/filters.component';
 import { NewPlanComponent } from './newPlan/newPlan.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { TabsComp } from './tabs/tabs.component';
+import { SelectComp } from './fields/field.component';
+import { SearchComp } from './search/search.component';
 
 
 @NgModule({
@@ -15,8 +17,10 @@ import {MatMenuModule} from '@angular/material/menu';
     AppComponent,
     Planning,
     ListComponent,
-    FiltersComponent,
-    NewPlanComponent
+    NewPlanComponent,
+    TabsComp,
+    SelectComp,
+    SearchComp
   ],
   imports: [
     BrowserModule,

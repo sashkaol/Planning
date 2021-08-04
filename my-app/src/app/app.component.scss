@@ -29,6 +29,9 @@
     &__burger {
         height: 12px;
         width: 18px;
+        outline: none;
+        border: none;
+        background-color: #fff;
     }
     &__button {
         color: #1071ff;
@@ -36,6 +39,10 @@
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
+        outline: none;
+        border: none;
+        background-color: #fff;
+        transition: $animBackGroung;
     }
     :hover {
         cursor: pointer;
@@ -48,13 +55,17 @@
     &__menu {
         display: flex;
         list-style: none;
-        &__item {
+        .menu__item {
             font-family: $mainFont;
             margin-right: 10px;
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
             color: rgba(0, 0, 0, 0.54);
+        }
+        .menu__item:not(:last-child)::after {
+            content: '—';
+            padding-left: 10px;
         }
     }
 }

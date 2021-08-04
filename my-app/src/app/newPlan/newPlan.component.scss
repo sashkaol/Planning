@@ -59,6 +59,11 @@
 .people {
     margin-top: 32px;
 }
+.page.basic.open {
+    combobox {
+        width: 818px;
+    }
+}
 .settings {
     &__title {
         font-family: $mainFont;
@@ -180,23 +185,6 @@
         width: 100%;
     }
 }
-.search {
-    &__field {
-        margin-left: 18px;
-        font-family: $mainFont;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
-        color: $active;
-    }
-    ::placeholder {
-        color: rgba(0, 0, 0, 0.38);
-    }
-    &__icon {
-        max-width: 15px;
-        width: 100%;
-    }
-}
 .page.people.open {
     display: flex;
     position: relative;
@@ -209,17 +197,15 @@
         }
         .fields {
             display: flex;
-            .higher {
-                z-index: 100000;
-            }
-            .field {
-                margin-top: 34px;
-                .options.open {
-                    z-index: 10000000;
+            .col {
+                display: flex;
+                flex-direction: column;
+                .filter {
+                    margin-top: 34px;
                 }
             }
-            .field.close {
-                display: none;
+            .col:not(:last-child) {
+                margin-right: 30px;
             }
         }
         .other {

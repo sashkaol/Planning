@@ -1,17 +1,17 @@
 <div>
   <div class="main" [class.opacity]="openAdd">
     <div class="header">
-      <div class="header__burger">
+      <button class="header__burger">
         <img src="../assets/menu.svg" alt="menu">
-      </div>
-      <div class="header__button ellipse-but blue" (click)="openAdd = true">
-        <span>➕ Запланировать</span>
-      </div>
+      </button>
+      <button class="header__button ellipse-but blue" (click)="openAdd = true">
+        <span><img src="../assets/plus.svg" alt="plus"> Запланировать</span>
+      </button>
     </div>
     <div class="navbar">
       <ul class="navbar__menu">
-        <li class="navbar__menu__item">Главная &nbsp;&nbsp;&mdash;</li>
-        <li class="navbar__menu__item">Планирование</li>
+        <li class="menu__item">Главная</li>
+        <li class="menu__item">Планирование</li>
       </ul>
     </div>
     <div class="container">

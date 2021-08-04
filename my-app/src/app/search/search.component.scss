@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+
+.search {
+    border-bottom: 1px solid $solight;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 41px;
+    padding: 7px 0;
+    box-sizing: border-box;
+    &__input {
+        outline: none;
+        border: none;
+        padding-left: 18px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $active;
+        font-family: $mainFont;
+    }
+    .icon {
+        max-width: 15px;
+        width: 100%;
+    }
+    ::placeholder {
+        color: $light;
+    }
+}

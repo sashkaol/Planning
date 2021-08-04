@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core'
+import { Component, Output, EventEmitter, OnInit } from '@angular/core'
 import { Plans } from '../list/mock-list'
 
 @Component({
@@ -6,9 +6,10 @@ import { Plans } from '../list/mock-list'
     templateUrl: './newPlan.component.html',
     styleUrls: ['./newPlan.component.scss']
 })
-export class NewPlanComponent {
+export class NewPlanComponent implements OnInit {
     isActive = 'basic';
     list = Plans;
+    plans: string[] = [];
     isSelect = ''
     isOpen = '';
     value = '';
@@ -26,7 +27,13 @@ export class NewPlanComponent {
         'Кто-то',
         'Еще кто-то'
     ]
-    selectALot: string[] = ['Поиск', 'Группа', 'Должность', 'Стаж']
+    selectALot: string[] = ['Поиск', 'Группа', 'Должность', 'Стаж'];
+
+    ngOnInit() {
+        this.list.forEach(el => {
+            this.plans.push(el.plan);
+        });
+    }
 
     public pushAtLot(value: string) {
         if (this.selectALot.indexOf(value) == -1) {

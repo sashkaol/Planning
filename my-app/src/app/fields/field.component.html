@@ -1,0 +1,13 @@
+<div class="select focus" [class.focus]="selectOpen">
+    <div class="select__label" [class.focus]="selectOpen">{{ label }}</div>
+    <div class="select__box" (click)="selectOpen = !selectOpen">
+        <input class="value" readonly placeholder="Выберите" [value]="isSelect" />
+        <div class="round-but">
+            <img src="../../assets/arrow.svg" alt="arrow">
+        </div>
+    </div>
+    <ul class="options" [class.open]="selectOpen">
+        <li [class.selectedItem]="isSelect == item" class="option" *ngFor="let item of list"
+            (click)="selectItem(item)">{{ item }}</li>
+    </ul>
+</div>
