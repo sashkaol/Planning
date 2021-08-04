@@ -10,6 +10,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { TabsComp } from './tabs/tabs.component';
 import { SelectComp } from './fields/field.component';
 import { SearchComp } from './search/search.component';
+import { RadioComp } from './radio/radio.components';
+import { CheckboxComp } from './checkbox/checkbox.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SearchComp } from './search/search.component';
     NewPlanComponent,
     TabsComp,
     SelectComp,
-    SearchComp
+    SearchComp,
+    RadioComp,
+    CheckboxComp
   ],
   imports: [
     BrowserModule,

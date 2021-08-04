@@ -82,41 +82,6 @@
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
-        .radio {
-            .custom-radio {
-                position: absolute;
-                z-index: -1;
-                opacity: 0;
-            }
-            .custom-radio + label {
-                display: inline-flex;
-                align-items: center;
-                user-select: none;
-            }
-            .custom-radio + label::before {
-                content: "";
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-image: url("../../assets/radio.svg");
-                margin-right: 16px;
-            }
-            .custom-radio:not(:disabled):not(:checked) + label:hover::before {
-                background-image: url("../../assets/RadioHover.svg");
-                cursor: pointer;
-            }
-            .custom-radio:not(:disabled):active + label::before {
-                background-image: url("../../assets/pressed.svg");
-            }
-            .custom-radio:checked + label::before {
-                background-image: url("../../assets/RadioActive.svg");
-            }
-        }
-        .radio:not(:last-child) {
-            margin-bottom: 16px;
-        }
     }
 }
 .event {
@@ -197,9 +162,11 @@
         }
         .fields {
             display: flex;
+            width: 394px;
             .col {
                 display: flex;
                 flex-direction: column;
+                max-width: 182px;
                 .filter {
                     margin-top: 34px;
                 }
@@ -278,71 +245,10 @@
                 }
             }
         }
-        .check {
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 16px;
-            color: $active;
-            padding-left: 8px;
-            .custom-check {
-                position: absolute;
-                z-index: -1;
-                opacity: 0;
-            }
-            .custom-check + label {
-                display: inline-flex;
-                align-items: center;
-                user-select: none;
-            }
-            .custom-check + label::before {
-                content: "";
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-image: url("../../assets/chechEnabled.svg");
-                margin-right: 16px;
-            }
-            .custom-check:not(:disabled):not(:checked) + label:hover::before {
-                background-image: url("../../assets/checkHover.svg");
-                cursor: pointer;
-            }
-            .custom-check:not(:disabled):active + label::before {
-                background-image: url("../../assets/checkPress.svg");
-            }
-            .custom-check:checked + label::before {
-                background-image: url("../../assets/checkActive.svg");
-            }
-        }
-        .check:not(:last-child) {
-            margin-bottom: 16px;
-        }
-        .check.all {
-            margin-top: 42px;
-        }
-        .check.people {
-            height: 36px;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            max-width: 390px;
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            transition: $animBackGroung;
-            span {
-                padding-left: 28px;
-            }
-        }
-        .check.people:hover {
-            background-color: $hover;
-            cursor: pointer;
-            transition: $animBackGroung;
-        }
     }
     .all {
         width: 50%;
+        margin-left: 30px;
         .empty {
             border: 1px dashed $solight;
             box-sizing: border-box;
@@ -379,26 +285,3 @@
         line-height: 18px;
     }
 }
-
-.cdk-drag-preview {
-    
-    cursor:grabbing;
-  }
-  
-  .cdk-drag-placeholder {
-    opacity: 0;
-  }
-  
-  .cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    
-    cursor:grabbing;
-  }
-  
-  .example-box:last-child {
-    border: none;
-  }
-  
-  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }

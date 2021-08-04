@@ -1,0 +1,5 @@
+<div class="radio" *ngFor="let btn of list">
+    <input class="custom-radio" type="radio" [name]="name" [id]="list.indexOf(btn)" [attr.checked]="list.indexOf(btn) == 0 ? 'checked' : null" />
+    <label [for]
+    ="list.indexOf(btn)" class="label">{{ btn }}</label>
+</div>

@@ -10,12 +10,8 @@
             </div>
         </div>
     </div>
-    <tabs [tabs]="['Основное', 'Участники']"></tabs>
-    <div class="tabs window">
-        <div id="basic" class="tab" [class.active]="isActive == 'basic'" (click)="select('basic')">Основное</div>
-        <div id="people" class="tab" [class.active]="isActive == 'people'" (click)="select('people')">Участники</div>
-    </div>
-    <div class="page basic" [class.open]="isActive == 'basic'">
+    <tabs [tabs]="['Основное', 'Участники']" (onOpen)="onOpen($event)"></tabs>
+    <div class="page basic" [class.open]="isActive == 'Основное'">
         <combobox [label]="'Программа'" [list]="plans"></combobox>
         <div class="settings">
             <h1 class="settings__title">Мероприятие, дата и время проведения</h1>
@@ -93,26 +89,11 @@
             </div>
             <h3 class="settings__title">Условия записи по коду</h3>
             <div class="settings__btns">
-                <div class="radio">
-                    <input class="custom-radio" type="radio" id="first" name="condition" checked />
-                    <label for="first">Не использовать код доступа</label>
-                </div>
-                <div class="radio">
-                    <input class="custom-radio" type="radio" id="second" name="condition" />
-                    <label for="second">Требовать регистрацию</label>
-                </div>
-                <div class="radio">
-                    <input class="custom-radio" type="radio" id="third" name="condition" />
-                    <label for="third">Запросить только имя и фамилию</label>
-                </div>
-                <div class="radio">
-                    <input class="custom-radio" type="radio" id="four" name="condition" />
-                    <label for="four">Не требовать регистрацию, имя и фамилию</label>
-                </div>
+                <radio [name]="'condition'" [list]="forRadio"></radio>
             </div>
         </div>
     </div>
-    <div class="page people" [class.open]="isActive == 'people'">
+    <div class="page people" [class.open]="isActive == 'Участники'">
         <div class="select">
             <h3 class="title">Доступные участники</h3>
             <div class="fields">
@@ -165,23 +146,12 @@
                     </div>
 
                 </div>
-                <div class="other__button drop ellipse-but grey" (click)="clear()">
+                <div class="other__button drop ellipse-but grey">
                     &#10005; Сбросить
                 </div>
             </div>
             <div class="check-field">
-                <div class="check all">
-                    <input class="custom-check" type="checkbox" id="all" name="all" (change)="checkAll()" />
-                    <label for="all">Все пользователи</label>
-                </div>
-                <div class="check people">
-                    <input class="custom-check item" type="checkbox" id="sec" name="people" (change)="checkNotAll()" />
-                    <label for="sec"><span>Чел</span></label>
-                </div>
-                <div class="check people">
-                    <input class="custom-check item" type="checkbox" id="th" name="people" (change)="checkNotAll()" />
-                    <label for="th"><span>Не чел</span></label>
-                </div>
+                <checkbox [name]="'people'" [list]="forCheck" [all]="true"></checkbox>
             </div>
         </div>
         <div class="all">

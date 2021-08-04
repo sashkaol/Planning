@@ -1,0 +1,70 @@
+@import '../../styles.scss';
+
+.check {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: $active;
+    padding-left: 8px;
+    cursor: pointer;
+    .label {
+        cursor: pointer;
+    }
+    .custom-check {
+        position: absolute;
+        z-index: 3;
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .custom-check + .label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+    .custom-check + .label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("../../assets/chechEnabled.svg");
+        margin-right: 16px;
+    }
+    .custom-check:not(:disabled):not(:checked) + .label:hover::before {
+        background-image: url("../../assets/checkHover.svg");
+        cursor: pointer;
+    }
+    .custom-check:not(:disabled):active + .label::before {
+        background-image: url("../../assets/checkPress.svg");
+    }
+    .custom-check:checked + .label::before {
+        background-image: url("../../assets/checkActive.svg");
+    }
+}
+.check:not(:last-child) {
+    margin-bottom: 16px;
+}
+.check.all {
+    margin-top: 42px;
+}
+.check.list {
+    height: 36px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    max-width: 390px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: $animBackGroung;
+    span {
+        padding-left: 28px;
+    }
+}
+.check.list:hover {
+    background-color: $hover;
+    transition: $animBackGroung;
+}

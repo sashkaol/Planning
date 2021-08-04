@@ -1,0 +1,8 @@
+<div class="check all" *ngIf="all">
+    <input class="custom-check" type="checkbox" id="all" name="all" (change)="checkAll()" />
+    <label class="label" for="all">Все пользователи</label>
+</div>
+<div class="check list" *ngFor="let item of list">
+    <input class="custom-check item" type="checkbox" [id]="list.indexOf(item)" [name]="name" (change)="checkNotAll()"/>
+    <label class="label" [for]="list.indexOf(item)"><span>{{ item }}</span></label>
+</div>

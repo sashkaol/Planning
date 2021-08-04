@@ -1,0 +1,35 @@
+.radio {
+    .custom-radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .custom-radio + .label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+    .custom-radio + .label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("../../assets/radio.svg");
+        margin-right: 16px;
+    }
+    .custom-radio:not(:disabled):not(:checked) + .label:hover::before {
+        background-image: url("../../assets/RadioHover.svg");
+        cursor: pointer;
+    }
+    .custom-radio:not(:disabled):active + .label::before {
+        background-image: url("../../assets/pressed.svg");
+    }
+    .custom-radio:checked + .label::before {
+        background-image: url("../../assets/RadioActive.svg");
+    }
+}
+.radio:not(:last-child) {
+    margin-bottom: 16px;
+}
