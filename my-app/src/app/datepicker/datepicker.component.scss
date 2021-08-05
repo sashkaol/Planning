@@ -6,8 +6,9 @@
     width: 290px;
     height: max-content;
     position: absolute;
-    z-index: 100000;
+    //z-index: 999;
     font-family: $mainFont;
+    background-color: #fff;
     .head {
         display: flex;
         justify-content: space-between;

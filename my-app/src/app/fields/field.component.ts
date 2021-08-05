@@ -11,6 +11,7 @@ export class SelectComp {
     @Input() label: string = '';
     @Input() img: string = '../../assets/arrow.svg';
     @Input() picture: string = '';
+    @Input() type: string = 'select';
     isSelect = '';
 
     public selectItem(item: string) {

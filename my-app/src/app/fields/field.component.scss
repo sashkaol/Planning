@@ -90,6 +90,15 @@
     .options.open {
         display: block;
     }
+    .datepicker {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        top: 48px;
+    }
+    .datepicker.open {
+        display: block;
+    }
 }
 .select.focus {
     border-bottom-color: $selected;

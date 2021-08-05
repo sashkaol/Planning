@@ -21,14 +21,14 @@
                     <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
                 </div>
                 <div class="fields">
-                    <div class="field mini select">
-                        <!-- yes, here too -->
+                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
+                    <!-- <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
 
                         </div>
-                    </div>
+                    </div> -->
                     <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>
@@ -38,20 +38,14 @@
                     <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
                 </div>
                 <div class="fields">
-                    <div class="field mini select">
-                        <label class="field__label">Дата</label>
-                        <div class="field__select">
-                            <input class="field__select__value" type="date" />
-
-                        </div>
-                    </div>
-                    <div class="field mini select">
+                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
+                    <!-- <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
 
                         </div>
-                    </div>
+                    </div> -->
                     <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>
@@ -61,18 +55,13 @@
                     <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
                 </div>
                 <div class="fields event">
-                    <div class="field mini select">
-                        <label class="field__label">Дата</label>
-                        <div class="field__select">
-                            <input class="field__select__value" type="date" />
-                        </div>
-                    </div>
-                    <div class="field mini select">
+                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
+                    <!-- <div class="field mini select">
                         <label class="field__label">Время</label>
                         <div class="field__select">
                             <input class="field__select__value" type="time" />
                         </div>
-                    </div>
+                    </div> -->
                     <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>

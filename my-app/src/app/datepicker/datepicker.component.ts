@@ -6,6 +6,7 @@ import { Component, DoCheck, Output } from "@angular/core";
     styleUrls: ['./datepicker.component.scss']
 })
 export class DatePicker implements DoCheck {
+    open = false;
     months: string[] = [
         'Январь',
         'Февраль',
