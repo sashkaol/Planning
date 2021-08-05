@@ -1,3 +1,3 @@
-<div class="tabs">
-    <div class="tab" *ngFor="let tab of tabs" [class.active]="activeTab == tab" (click)="select(tab); open(tab)">{{ tab }}</div>
-</div>
+<ul class="tabs">
+    <li class="tab" *ngFor="let tab of tabs" [class.active]="activeTab == tab" (click)="select(tab); open(tab)">{{ tab }}</li>
+</ul>

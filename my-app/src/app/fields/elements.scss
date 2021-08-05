@@ -3,13 +3,8 @@ $pressedBlue: #dae9ff;
 $pressedGrey: #dcdcdc;
 
 .round-but {
-    border-radius: 50%;
-    width: 40px;
-    height: 100%;
     transition: $animBackGroung;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #fff;
 }
 .round-but:hover {
     cursor: pointer;

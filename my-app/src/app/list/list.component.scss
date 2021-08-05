@@ -122,6 +122,27 @@
 .context.open {
     display: block;
 }
+.button-menu {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $animBackGroung;
+}
+.button-menu:hover {
+    background-color: #ebebeb;
+    transition: $animBackGroung;
+}
+.button-menu:active {
+    background-color: #dadada;
+    transition: $animBackGroung;
+}
 @media screen and (max-width: 600px) {
     .list {
         margin-top: 45px;

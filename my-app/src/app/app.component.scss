@@ -1,8 +1,14 @@
-@import './fields/elements.scss';
+@import "./fields/elements.scss";
 
 * {
     margin: 0;
     padding: 0;
+}
+.overlay {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
 }
 .main {
     max-width: 1210px;
@@ -12,14 +18,15 @@
 }
 .opacity {
     opacity: 0.1;
-    pointer-events: none;
     transition: opacity 0.4s ease-out;
+    pointer-events: none;
 }
 .hidden {
     display: none;
 }
 .hidden.visible {
     display: block;
+    z-index: 100;
 }
 .header {
     height: 64px;
@@ -43,6 +50,9 @@
         border: none;
         background-color: #fff;
         transition: $animBackGroung;
+        .plus {
+            margin-right: 12px;
+        }
     }
     :hover {
         cursor: pointer;
@@ -64,7 +74,7 @@
             color: rgba(0, 0, 0, 0.54);
         }
         .menu__item:not(:last-child)::after {
-            content: '—';
+            content: "—";
             padding-left: 10px;
         }
     }

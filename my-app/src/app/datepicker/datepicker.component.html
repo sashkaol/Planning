@@ -1,0 +1,49 @@
+<div class="datepicker">
+    <div class="head">
+        <button class="arrow round-but" (click)="goPrev()">
+            <img id="prevent" src="../../assets/left.svg" alt="prevent">
+        </button>
+        {{ date }}
+        <button class="arrow round-but" (click)="goNext()">
+            <img id="next" src="../../assets/right.svg" alt="next">
+        </button>
+    </div>
+    <!-- <div class="days">
+        <span id="1">Пн</span>
+        <span id="2">Вт</span>
+        <span id="3">Ср</span>
+        <span id="4">Чт</span>
+        <span id="5">Пт</span>
+        <span id="6">Сб</span>
+        <span id="0">Вс</span>
+    </div> -->
+    <table class="days" id="days">
+        <tr>
+            <th class="day">Пн</th>
+            <th class="day">Вт</th>
+            <th class="day">Ср</th>
+            <th class="day">Чт</th>
+            <th class="day">Пт</th>
+            <th class="day">Сб</th>
+            <th class="day">Вс</th>
+        </tr>
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[0]">{{ week }}</td>
+        </tr>
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[1]">{{ week }}</td>
+        </tr>      
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[2]">{{ week }}</td>
+        </tr>      
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[3]">{{ week }}</td>
+        </tr>      
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[4]">{{ week }}</td>
+        </tr>      
+        <tr>
+            <td class="day" *ngFor="let week of arrWeek[5]">{{ week }}</td>
+        </tr>            
+    </table>
+</div>

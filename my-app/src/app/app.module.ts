@@ -12,6 +12,7 @@ import { SelectComp } from './fields/field.component';
 import { SearchComp } from './search/search.component';
 import { RadioComp } from './radio/radio.components';
 import { CheckboxComp } from './checkbox/checkbox.component';
+import { DatePicker } from './datepicker/datepicker.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CheckboxComp } from './checkbox/checkbox.component';
     SelectComp,
     SearchComp,
     RadioComp,
-    CheckboxComp
+    CheckboxComp,
+    DatePicker
   ],
   imports: [
     BrowserModule,

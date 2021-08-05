@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./planning.component.scss']
 })
 export class Planning {
-    
+    isActive = 'Групповое';
+
+    onOpen(increased: string) {
+        this.isActive = increased;
+        console.log(increased);
+    }
 }

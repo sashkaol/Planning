@@ -21,6 +21,7 @@
         font-weight: bold;
         font-size: 18px;
         line-height: 24px;
+        margin-bottom: 20px;
         .buttons {
             display: flex;
             max-width: 88px;
@@ -33,12 +34,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                cursor: pointer;
-                transition: $animBackGroung;
-            }
-            .button:hover {
-                background-color: $hover;
-                transition: $animBackGroung;
+                border: none;
+                outline: none;
             }
             .cross {
                 width: 12px;
@@ -82,6 +79,9 @@
         font-size: 12px;
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
+    }
+    .filter {
+        max-width: 246px;
     }
 }
 .event {
@@ -166,9 +166,9 @@
             .col {
                 display: flex;
                 flex-direction: column;
-                max-width: 182px;
                 .filter {
                     margin-top: 34px;
+                    max-width: 182px;
                 }
             }
             .col:not(:last-child) {

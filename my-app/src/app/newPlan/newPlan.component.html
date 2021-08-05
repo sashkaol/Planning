@@ -1,13 +1,13 @@
 <div class="new">
     <div class="title">
-        Планирование
+        <h4>Планирование</h4>
         <div class="buttons">
-            <div class="button">
+            <button class="button round-but">
                 <img class="ok" src="../../assets/ok.svg" alt="">
-            </div>
-            <div class="button" (click)="close(false)">
+            </button>
+            <button class="button round-but" (click)="close(false)">
                 <img class="cross" src="../../assets/cross.svg" alt="">
-            </div>
+            </button>
         </div>
     </div>
     <tabs [tabs]="['Основное', 'Участники']" (onOpen)="onOpen($event)"></tabs>
@@ -37,8 +37,7 @@
 
                         </div>
                     </div>
-                    <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
-                    <combobox [label]="'Тренер'" [list]="coach"></combobox>
+                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>
             <div class="event">
@@ -61,8 +60,7 @@
 
                         </div>
                     </div>
-                    <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
-                    <combobox [label]="'Тренер'" [list]="coach"></combobox>
+                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>
             <div class="event">
@@ -83,8 +81,7 @@
                             <input class="field__select__value" type="time" />
                         </div>
                     </div>
-                    <img style="margin-right: 10px;" src="../../assets/coach.svg" alt="">
-                    <combobox [label]="'Тренер'" [list]="coach"></combobox>
+                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
                 </div>
             </div>
             <h3 class="settings__title">Условия записи по коду</h3>

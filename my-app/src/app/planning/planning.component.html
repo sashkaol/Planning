@@ -3,12 +3,15 @@
     Планирование
 </h1>
 <div class="plans">
-    <tabs [tabs]="['Групповое', 'Индивидуальное']"></tabs>
-    <div class="filters">
-        <search class="filter"></search>
-        <combobox class="filter" [label]="'Программа'" [list]="['Все', 'Не все']"></combobox>
-        <combobox class="filter" [label]="'Период'" [list]="['Июнь 2019', 'Не Июнь 2019']"></combobox>
-        <combobox class="filter" [label]="'Статус'" [list]="['Все', 'Не все']"></combobox>
+    <tabs (onOpen)="onOpen($event)" [tabs]="['Групповое', 'Индивидуальное']"></tabs>
+    <div class="group" *ngIf="isActive == 'Групповое'">
+        <div class="filters">
+            <search class="filter"></search>
+            <combobox class="filter" [label]="'Программа'" [list]="['Все', 'Не все']"></combobox>
+            <combobox class="filter" [label]="'Период'" [list]="['Июнь 2019', 'Не Июнь 2019']"></combobox>
+            <combobox class="filter" [label]="'Статус'" [list]="['Все', 'Не все']"></combobox>
+        </div>
+        <list></list>
     </div>
-    <list></list>
+    <datepicker *ngIf="isActive == 'Индивидуальное'"></datepicker>
 </div>

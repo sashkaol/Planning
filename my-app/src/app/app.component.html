@@ -1,11 +1,12 @@
 <div>
+  <div class="overlay" *ngIf="openAdd" (click)="openAdd = false"></div>
   <div class="main" [class.opacity]="openAdd">
     <div class="header">
       <button class="header__burger">
         <img src="../assets/menu.svg" alt="menu">
       </button>
       <button class="header__button ellipse-but blue" (click)="openAdd = true">
-        <span><img src="../assets/plus.svg" alt="plus"> Запланировать</span>
+        <img class="plus" src="../assets/plus.svg" alt="plus"> Запланировать
       </button>
     </div>
     <div class="navbar">
