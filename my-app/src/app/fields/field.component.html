@@ -9,5 +9,5 @@
         <li [class.selectedItem]="isSelect == item" class="option" *ngFor="let item of list" (click)="selectItem(item)">
             {{ item }}</li>
     </ul>
-    <datepicker class="datepicker" *ngIf="type == 'date'" [class.open]="selectOpen"></datepicker>
+    <datepicker (onSetDate)="onSetDate($event)" class="datepicker" *ngIf="type == 'date'" [class.open]="selectOpen"></datepicker>
 </div>

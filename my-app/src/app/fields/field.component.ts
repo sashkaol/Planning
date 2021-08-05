@@ -14,6 +14,10 @@ export class SelectComp {
     @Input() type: string = 'select';
     isSelect = '';
 
+    onSetDate(inc: string) {
+        this.isSelect = inc;
+    }
+
     public selectItem(item: string) {
         this.isSelect = item;
     }

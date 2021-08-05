@@ -116,39 +116,7 @@
     .fields {
         margin-top: 34px;
         display: flex;
-    }
-    input[type="time"]::-webkit-calendar-picker-indicator,
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        background: url("../../assets/arrow.svg") no-repeat center;
-        transition: $animBackGroung;
-        border-radius: 50%;
-        width: 25px;
-        height: 20px;
-    }
-    input[type="time"]::-webkit-calendar-picker-indicator:hover,
-    input[type="date"]::-webkit-calendar-picker-indicator:hover {
-        background-color: $hover;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: $animBackGroung;
-    }
-    input[type="time"]::-webkit-calendar-picker-indicator:active,
-    input[type="date"]::-webkit-calendar-picker-indicator:active {
-        background-color: $pressedGrey;
-        cursor: pointer;
-        transition: $animBackGroung;
-    }
-    input[type="date"]::before {
-        content: url("../../assets/datepicker.svg");
-        margin-right: 18px;
-    }
-    input[type="time"]::before {
-        content: url("../../assets/clock.svg");
-        margin-right: 18px;
-    }
-    .field__select__value {
-        max-width: 246px;
-        width: 100%;
+        justify-content: flex-end;
     }
 }
 .page.people.open {

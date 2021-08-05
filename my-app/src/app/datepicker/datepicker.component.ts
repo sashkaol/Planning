@@ -1,4 +1,4 @@
-import { Component, DoCheck, Output } from "@angular/core";
+import { Component, DoCheck, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: 'datepicker',
@@ -42,7 +42,13 @@ export class DatePicker implements DoCheck {
     week = new Date().getDay();
     days: number[] = [];
     arrWeek: any[] = [];
-    curDate = this.day + ' / ' + this.caseMonths[this.month] + ' / ' + this.year;
+    curDate = `${this.day} ${this.caseMonths[this.month]}` + ' / ' + this.year;
+    selectDate = '';
+    @Output() onSetDate = new EventEmitter<string>()
+    setDate() {
+        console.log(this.selectDate);
+        this.onSetDate.emit(this.selectDate);
+    }
 
     public goNext() {
         if (this.month == 11) {
@@ -104,7 +110,8 @@ export class DatePicker implements DoCheck {
     }
 
     public getMyDate(day: number) {
-        let myDate =  day + ' / ' + this.caseMonths[this.month] + ' / ' + this.year;
+        let myDate =  `${day} ${this.caseMonths[this.month]}` + ' / ' + this.year;
+        this.selectDate = `${day} ${this.caseMonths[this.month]}`
         return myDate;
     }
 }

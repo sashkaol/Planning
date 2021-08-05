@@ -72,17 +72,17 @@
         .day:hover {
             cursor: pointer;
             .day-but {
-                background-color: $hover;
+                background-color: #f6f6f6;
             }
         }
         .day:active {
             .day-but {
-                background-color: $light;
+                background-color: #dcdcdc;
             }
         }
         .day.select {
             .day-but {
-                background-color: $light;
+                background-color: #dcdcdc;
             }
         }
         .day.current {

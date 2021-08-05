@@ -18,49 +18,8 @@
             <td class="week">Сб</td>
             <td class="week">Вс</td>
         </tr>
-        <tr>
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[0]">
-                <button class="day-but round-but">
-                    {{ day }}
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[1]">
-                <button class="day-but round-but">
-                    {{ day }}
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[2]">
-                <button class="day-but round-but">
-                    {{ day }}
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[3]">
-                <button class="day-but round-but">
-                    {{ day }}
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[4]">
-                <button class="day-but round-but">
-                    {{ day }}
-                </button>
-            </td>
-        </tr>
-        <tr *ngIf="arrWeek[5]">
-            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
-                *ngFor="let day of arrWeek[5]">
+        <tr *ngFor="let td of [0, 1, 2, 3, 4, 5]">
+            <td *ngFor="let day of arrWeek[td]" (click)="getMyDate(day); setDate()" [id]="day" class="day">
                 <button class="day-but round-but">
                     {{ day }}
                 </button>
