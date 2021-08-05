@@ -13,7 +13,6 @@ export class TabsComp implements OnInit {
     
     open(increased: string) {
         increased = this.activeTab;
-        console.log(increased);
         this.onOpen.emit(increased);
     }
 

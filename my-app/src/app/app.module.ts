@@ -26,7 +26,7 @@ import { DatePicker } from './datepicker/datepicker.component';
     SearchComp,
     RadioComp,
     CheckboxComp,
-    DatePicker
+    DatePicker,
   ],
   imports: [
     BrowserModule,

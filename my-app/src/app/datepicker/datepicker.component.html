@@ -3,47 +3,68 @@
         <button class="arrow round-but" (click)="goPrev()">
             <img id="prevent" src="../../assets/left.svg" alt="prevent">
         </button>
-        {{ date }}
+        <span>{{ this.months[this.month] }}, <span class="year">{{ this.year }}</span></span>
         <button class="arrow round-but" (click)="goNext()">
             <img id="next" src="../../assets/right.svg" alt="next">
         </button>
     </div>
-    <!-- <div class="days">
-        <span id="1">Пн</span>
-        <span id="2">Вт</span>
-        <span id="3">Ср</span>
-        <span id="4">Чт</span>
-        <span id="5">Пт</span>
-        <span id="6">Сб</span>
-        <span id="0">Вс</span>
-    </div> -->
     <table class="days" id="days">
         <tr>
-            <th class="day">Пн</th>
-            <th class="day">Вт</th>
-            <th class="day">Ср</th>
-            <th class="day">Чт</th>
-            <th class="day">Пт</th>
-            <th class="day">Сб</th>
-            <th class="day">Вс</th>
+            <td class="week">Пн</td>
+            <td class="week">Вт</td>
+            <td class="week">Ср</td>
+            <td class="week">Чт</td>
+            <td class="week">Пт</td>
+            <td class="week">Сб</td>
+            <td class="week">Вс</td>
         </tr>
         <tr>
-            <td class="day" *ngFor="let week of arrWeek[0]">{{ week }}</td>
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[0]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
         </tr>
         <tr>
-            <td class="day" *ngFor="let week of arrWeek[1]">{{ week }}</td>
-        </tr>      
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[1]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
+        </tr>
         <tr>
-            <td class="day" *ngFor="let week of arrWeek[2]">{{ week }}</td>
-        </tr>      
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[2]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
+        </tr>
         <tr>
-            <td class="day" *ngFor="let week of arrWeek[3]">{{ week }}</td>
-        </tr>      
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[3]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
+        </tr>
         <tr>
-            <td class="day" *ngFor="let week of arrWeek[4]">{{ week }}</td>
-        </tr>      
-        <tr>
-            <td class="day" *ngFor="let week of arrWeek[5]">{{ week }}</td>
-        </tr>            
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[4]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="arrWeek[5]">
+            <td [class.current]="getMyDate(day) == curDate" (click)="getMyDate(day)" [id]="day" class="day"
+                *ngFor="let day of arrWeek[5]">
+                <button class="day-but round-but">
+                    {{ day }}
+                </button>
+            </td>
+        </tr>
     </table>
 </div>

@@ -1,34 +1,94 @@
-@import '../fields/elements.scss';
+@import "../fields/elements.scss";
 
 .datepicker {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
     border-radius: 4px;
     width: 290px;
-    height: 300px;
+    height: max-content;
     position: absolute;
     z-index: 100000;
+    font-family: $mainFont;
     .head {
         display: flex;
         justify-content: space-between;
         max-width: 227px;
-        margin: 27px auto;
+        margin-top: 27px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: $active;
+        align-items: center;
         .arrow {
             width: 32px;
             height: 32px;
             border-radius: 50%;
             outline: none;
             border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 9px;
+            }
+        }
+        .year {
+            color: $passive;
+            font-weight: 500;
         }
     }
     .days {
-        display: flex;
-        max-width: 258px;
-        justify-content: space-between;
+        max-width: 257px;
+        width: 100%;
         margin: 26px auto;
-        flex-direction: column;
-        .day {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        .week {
+            color: $passive;
             width: 34px;
             text-align: center;
+        }
+        .day {
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            .day-but {
+                outline: none;
+                color: $active;
+                border-radius: 50%;
+                background-color: #fff;
+                border: none;
+                width: 30px;
+                height: 30px;
+                font-family: $mainFont;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+        .day:hover {
+            cursor: pointer;
+            .day-but {
+                background-color: $hover;
+            }
+        }
+        .day:active {
+            .day-but {
+                background-color: $light;
+            }
+        }
+        .day.select {
+            .day-but {
+                background-color: $light;
+            }
+        }
+        .day.current {
+            .day-but {
+                background-color: $selected;
+                color: #fff;
+            }
         }
     }
 }

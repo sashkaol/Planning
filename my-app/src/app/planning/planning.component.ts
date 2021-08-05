@@ -10,6 +10,5 @@ export class Planning {
 
     onOpen(increased: string) {
         this.isActive = increased;
-        console.log(increased);
     }
 }
