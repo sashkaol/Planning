@@ -4,11 +4,11 @@
         <img class="icon" *ngIf="picture !== ''" [src]="picture" alt="icon">
         <input class="value" readonly placeholder="Выберите" [value]="isSelect" />
         <img *ngIf="!withCancel || (withCancel && isSelect == '')" [src]="img" alt="arrow">
-        <img (click)="isSelect = ''" *ngIf="withCancel && isSelect !== ''" src="../../assets/crossField.svg" alt="cancel">
+        <img (click)="isSelect = ''; datePickerSelect = true" *ngIf="withCancel && isSelect !== ''" src="../../assets/crossField.svg" alt="cancel">
     </div>
     <ul *ngIf="type == 'select'" class="options" [class.open]="selectOpen">
         <li [class.selectedItem]="isSelect == item" class="option" *ngFor="let item of list" (click)="selectItem(item)">
             {{ item }}</li>
     </ul>
-    <datepicker (onSetDate)="onSetDate($event)" class="datepicker" *ngIf="type == 'date'" [class.open]="selectOpen"></datepicker>
+    <datepicker [notSelect]="datePickerSelect" (onSetDate)="onSetDate($event)" class="datepicker" *ngIf="type == 'date'" [class.open]="selectOpen"></datepicker>
 </div>

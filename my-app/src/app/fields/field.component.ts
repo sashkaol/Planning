@@ -13,6 +13,7 @@ export class SelectComp {
     @Input() picture: string = '';
     @Input() type: string = 'select';
     @Input() withCancel: boolean = false;
+    datePickerSelect: boolean = false;
     isSelect = '';
 
     onSetDate(inc: string) {

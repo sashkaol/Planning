@@ -19,7 +19,7 @@
             <td class="week">Вс</td>
         </tr>
         <tr *ngFor="let td of [0, 1, 2, 3, 4, 5]">
-            <td *ngFor="let day of arrWeek[td]" (click)="getMyDate(day); setDate()" [id]="day" class="day">
+            <td *ngFor="let day of arrWeek[td]" (click)="getMyDate(day); setDate(day); selectMyDate(day)" [id]="getMyDate(day)" class="day" [class.current]="getMyDate(day) == curDate" [class.select]="selectDate == getMyDate(day) && notSelect == false">
                 <button class="day-but round-but">
                     {{ day }}
                 </button>
