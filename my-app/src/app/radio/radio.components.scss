@@ -19,11 +19,11 @@
         height: 20px;
         background-repeat: no-repeat;
         background-position: center center;
-        background-image: url("../../assets/radio.svg");
+        background-image: url("../../assets/RadioHover.svg");
         margin-right: 16px;
     }
     .custom-radio:not(:disabled):not(:checked) + .label:hover::before {
-        background-image: url("../../assets/RadioHover.svg");
+        background-image:  url("../../assets/radio.svg");
         cursor: pointer;
     }
     .custom-radio:not(:disabled):active + .label::before {
@@ -31,6 +31,9 @@
     }
     .custom-radio:checked + .label::before {
         background-image: url("../../assets/RadioActive.svg");
+    }
+    .custom-radio:disabled + .label::before {
+        background-image: url('../../assets/radioDis.svg');
     }
 }
 .radio:not(:last-child) {

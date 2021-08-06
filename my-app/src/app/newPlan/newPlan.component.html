@@ -15,56 +15,9 @@
         <combobox [label]="'Программа'" [list]="plans"></combobox>
         <div class="settings">
             <h1 class="settings__title">Мероприятие, дата и время проведения</h1>
-            <div class="event">
-                <div class="head">
-                    <h3 class="title">Мероприятие</h3>
-                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
-                </div>
-                <div class="fields">
-                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
-                    <!-- <div class="field mini select">
-                        <label class="field__label">Время</label>
-                        <div class="field__select">
-                            <input class="field__select__value" type="time" />
-
-                        </div>
-                    </div> -->
-                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
-                </div>
-            </div>
-            <div class="event">
-                <div class="head">
-                    <h3 class="title">Мероприятие</h3>
-                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
-                </div>
-                <div class="fields">
-                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
-                    <!-- <div class="field mini select">
-                        <label class="field__label">Время</label>
-                        <div class="field__select">
-                            <input class="field__select__value" type="time" />
-
-                        </div>
-                    </div> -->
-                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
-                </div>
-            </div>
-            <div class="event">
-                <div class="head">
-                    <h3 class="title">Мероприятие</h3>
-                    <div class="subtitle">Главные правила продаж <span class="type">Тренниг</span></div>
-                </div>
-                <div class="fields event">
-                    <combobox class="filter" [type]="'date'" [label]="'Дата'" [img]="'../../assets/greyArrow.svg'" [picture]="'../../assets/datepicker.svg'"></combobox>
-                    <!-- <div class="field mini select">
-                        <label class="field__label">Время</label>
-                        <div class="field__select">
-                            <input class="field__select__value" type="time" />
-                        </div>
-                    </div> -->
-                    <combobox [picture]="'../../assets/coach.svg'" [img]="'../../assets/greyArrow.svg'" class="filter" [label]="'Тренер'" [list]="coach"></combobox>
-                </div>
-            </div>
+            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
+            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
+            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
             <h3 class="settings__title">Условия записи по коду</h3>
             <div class="settings__btns">
                 <radio [name]="'condition'" [list]="forRadio"></radio>
@@ -77,30 +30,36 @@
             <div class="fields">
                 <div class="col">
                     <search class="filter"></search>
-                    <combobox class="filter" *ngIf="selectALot.includes('Должность')" [label]="'Должность'" [list]="['Все', 'Не все']">
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter"
+                        *ngIf="selectALot.includes('Должность')" [label]="'Должность'" [list]="['Все', 'Не все']">
                     </combobox>
-                    <combobox class="filter" *ngIf="selectALot.includes('Подразделение')" [label]="'Подразделение'"
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter"
+                        *ngIf="selectALot.includes('Подразделение')" [label]="'Подразделение'"
                         [list]="['Все', 'Не все']">
                     </combobox>
-                    <combobox class="filter" *ngIf="selectALot.includes('Город')" [label]="'Город'" [list]="['Все', 'Не все']">
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter" *ngIf="selectALot.includes('Город')"
+                        [label]="'Город'" [list]="['Все', 'Не все']">
                     </combobox>
                 </div>
                 <div class="col">
-                    <combobox class="filter" *ngIf="selectALot.includes('Группа')" [label]="'Группа'" [list]="['Все', 'Не все']">
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter" *ngIf="selectALot.includes('Группа')"
+                        [label]="'Группа'" [list]="['Все', 'Не все']">
                     </combobox>
-                    <combobox class="filter" *ngIf="selectALot.includes('Стаж')" [label]="'Стаж'" [list]="['Все', 'Не все']">
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter" *ngIf="selectALot.includes('Стаж')"
+                        [label]="'Стаж'" [list]="['Все', 'Не все']">
                     </combobox>
-                    <combobox class="filter" *ngIf="selectALot.includes('Округ')" [label]="'Округ'" [list]="['Все', 'Не все']">
+                    <combobox [img]="'../../assets/greyArrow.svg'" class="filter" *ngIf="selectALot.includes('Округ')"
+                        [label]="'Округ'" [list]="['Все', 'Не все']">
                     </combobox>
                 </div>
             </div>
             <div class="other">
                 <div class="other__text">42 пользователя</div>
                 <div class="menu">
-                    <div class="other__button settings ellipse-but blue" (click)="open('settings')">
+                    <button class="other__button settings ellipse-but blue" (click)="open('settings')">
                         <img class="filters" src="../../assets/filters.svg" alt="filters">
                         Настроить
-                    </div>
+                    </button>
                     <div class="options" [class.open]="isOpen == 'settings'">
                         <div class="label">Системные поля</div>
                         <ul>
@@ -124,9 +83,9 @@
                     </div>
 
                 </div>
-                <div class="other__button drop ellipse-but grey">
+                <button class="other__button drop ellipse-but grey">
                     &#10005; Сбросить
-                </div>
+                </button>
             </div>
             <div class="check-field">
                 <checkbox [name]="'people'" [list]="forCheck" [all]="true"></checkbox>

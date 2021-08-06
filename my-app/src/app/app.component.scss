@@ -1,4 +1,4 @@
-@import "./fields/elements.scss";
+@import "../styles.scss";
 
 * {
     margin: 0;
@@ -60,7 +60,8 @@
 }
 .navbar {
     max-width: 1146px;
-    margin: 16px auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
     width: 100%;
     &__menu {
         display: flex;
@@ -72,6 +73,7 @@
             font-size: 12px;
             line-height: 16px;
             color: rgba(0, 0, 0, 0.54);
+            cursor: pointer;
         }
         .menu__item:not(:last-child)::after {
             content: "—";

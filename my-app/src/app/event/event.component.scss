@@ -1,0 +1,41 @@
+@import "../../styles.scss";
+
+.event {
+    margin-top: 26px;
+    .head {
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-sizing: border-box;
+        font-weight: 500;
+        .title {
+            font-size: 10px;
+            line-height: 12px;
+            color: $passive;
+        }
+        .subtitle {
+            font-size: 12px;
+            line-height: 16px;
+            color: $light;
+            border-bottom: 1px solid $solight;
+            padding-bottom: 7px;
+            .type {
+                color: $solight;
+            }
+        }
+    }
+    .head:not(:first-child) {
+        margin-top: 34px;
+    }
+    .fields {
+        margin-top: 34px;
+        display: flex;
+        justify-content: flex-end;
+        .filter {
+            max-width: 246px;
+            width: 100%;
+            margin-left: 16px;
+        }
+    }
+}

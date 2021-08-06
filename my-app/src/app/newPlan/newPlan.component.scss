@@ -1,4 +1,4 @@
-@import "../fields/elements.scss";
+@import "../../styles.scss";
 
 .new {
     height: max-content;
@@ -80,44 +80,6 @@
         line-height: 16px;
         color: rgba(0, 0, 0, 0.54);
     }
-    .filter {
-        max-width: 246px;
-        margin-left: 16px;
-    }
-}
-.event {
-    margin-top: 26px;
-    .head {
-        height: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        box-sizing: border-box;
-        font-weight: 500;
-        .title {
-            font-size: 10px;
-            line-height: 12px;
-            color: $passive;
-        }
-        .subtitle {
-            font-size: 12px;
-            line-height: 16px;
-            color: $light;
-            border-bottom: 1px solid $solight;
-            padding-bottom: 7px;
-            .type {
-                color: $solight;
-            }
-        }
-    }
-    .head:not(:first-child) {
-        margin-top: 34px;
-    }
-    .fields {
-        margin-top: 34px;
-        display: flex;
-        justify-content: flex-end;
-    }
 }
 .page.people.open {
     display: flex;
@@ -146,10 +108,16 @@
         }
         .other {
             &__text {
-                margin-right: 34px;
+                margin-right: 42px;
             }
             &__button {
-                margin-right: 10px;
+                margin-right: 5px;
+                font-family: $mainFont;
+                font-size: 12px;
+                line-height: 16px;
+            }
+            &__button.grey {
+                color: $passive;
             }
             .menu {
                 position: relative;

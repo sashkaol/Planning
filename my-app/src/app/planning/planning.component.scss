@@ -7,8 +7,6 @@
     color: rgba(0, 0, 0, 0.87);
     font-family: $mainFont;
     max-width: 1146px;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
     .icon {
         max-width: 27px;
@@ -21,6 +19,41 @@
     .filter {
         margin-right: 30px;
         max-width: 166px;
+    }
+}
+.buttons {
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 36px;
+    align-items: center;
+    .text {
+        margin-right: 94px;
+        font-weight: 500;
+        color: $passive;
+        font-family: $mainFont;
+    }
+    .but {
+        font-weight: 600;
+        font-family: $mainFont;
+        font-size: 12px;
+        line-height: 16px;
+        color: $selected;
+        display: flex;
+        align-items: center;
+    }
+    .but.blue {
+        margin-right: 40px;
+        img {
+            margin-right: 10px;
+        }
+    }
+    .but.grey {
+        color: $passive;
+        img {
+            width: 9px;
+            margin-right: 13px;
+        }
     }
 }
 @media screen and (max-width: 375px) {

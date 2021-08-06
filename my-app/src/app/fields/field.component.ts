@@ -12,6 +12,7 @@ export class SelectComp {
     @Input() img: string = '../../assets/arrow.svg';
     @Input() picture: string = '';
     @Input() type: string = 'select';
+    @Input() withCancel: boolean = false;
     isSelect = '';
 
     onSetDate(inc: string) {

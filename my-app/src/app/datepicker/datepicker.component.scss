@@ -1,4 +1,4 @@
-@import "../fields/elements.scss";
+@import "../../styles.scss";
 
 .datepicker {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
@@ -6,7 +6,6 @@
     width: 290px;
     height: max-content;
     position: absolute;
-    //z-index: 999;
     font-family: $mainFont;
     background-color: #fff;
     .head {

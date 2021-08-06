@@ -30,11 +30,11 @@
         height: 20px;
         background-repeat: no-repeat;
         background-position: center center;
-        background-image: url("../../assets/chechEnabled.svg");
+        background-image: url("../../assets/checkHover.svg");
         margin-right: 16px;
     }
     .custom-check:not(:disabled):not(:checked) + .label:hover::before {
-        background-image: url("../../assets/checkHover.svg");
+        background-image: url("../../assets/chechEnabled.svg");
         cursor: pointer;
     }
     .custom-check:not(:disabled):active + .label::before {
@@ -42,6 +42,9 @@
     }
     .custom-check:checked + .label::before {
         background-image: url("../../assets/checkActive.svg");
+    }
+    .custom-check:disabled + .label::before {
+        background-image: url("../../assets/checkDis.svg");
     }
 }
 .check:not(:last-child) {
