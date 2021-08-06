@@ -15,9 +15,9 @@
         <combobox [label]="'Программа'" [list]="plans"></combobox>
         <div class="settings">
             <h1 class="settings__title">Мероприятие, дата и время проведения</h1>
-            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
-            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
-            <event [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
+            <event [time]="['9:00', '10:45']" [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
+            <event [time]="['15:00', '18:10', '20:00']" [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
+            <event [time]="['7:00', '11:15']" [subtitle]="'Главные правила продаж'" [type]="'Треннинг'"></event>
             <h3 class="settings__title">Условия записи по коду</h3>
             <div class="settings__btns">
                 <radio [name]="'condition'" [list]="forRadio"></radio>

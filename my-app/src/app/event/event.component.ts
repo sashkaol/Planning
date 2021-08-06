@@ -12,4 +12,6 @@ export class Event {
     ];
     @Input() subtitle: string = '';
     @Input() type: string = '';
+    @Input() disabled: boolean = false;
+    @Input() time: string[] = [];
 }
