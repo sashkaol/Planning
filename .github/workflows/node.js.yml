@@ -32,7 +32,7 @@ jobs:
         cache-dependency-path: './my-app/package-lock.json'
     - run: npm ci
     - run: npm run build --if-present
-    - name: Deploy to GitHub Pages
+    - name: CI
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v4
       with:
@@ -40,3 +40,6 @@ jobs:
         # Укажите точный путь к папке сборки. 
         # В новых Angular это обычно dist/[имя-проекта]/browser или просто dist/[имя-проекта]
         publish_dir: ./my-app/dist/my-app
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
