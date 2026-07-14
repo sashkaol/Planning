@@ -40,6 +40,6 @@ jobs:
         # Укажите точный путь к папке сборки. 
         # В новых Angular это обычно dist/[имя-проекта]/browser или просто dist/[имя-проекта]
         publish_dir: ./my-app/dist/my-app
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    # - name: Deploy to GitHub Pages
+    #   id: deployment
+    #   uses: actions/deploy-pages@v4
